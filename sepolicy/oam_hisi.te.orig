@@ -14,22 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# gnss
+# oam_hisi
 #
 
-type gnss, domain;
-type gnss_exec, exec_type, file_type;
-type gnss_device, dev_type, file_type;
-type gnss_data_file, file_type;
+type oam_hisi, domain;
+type oam_hisi_exec, exec_type, file_type;
+type oam_hisi_device, dev_type,file_type;
 
-init_daemon_domain(gnss)
+init_daemon_domain(oam_hisi)
 
-allow gnss gnss_device:chr_file rw_file_perms;
-allow gnss system_data_file:sock_file create_file_perms;
-allow gnss system_data_file:file rw_file_perms;
-allow gnss gnss_data_file:dir create_dir_perms;
-allow gnss gnss_data_file:file create_file_perms;
-allow gnss properties_device:file r_file_perms;
-allow gnss kernel_devicetree:file r_file_perms;
-allow gnss sysfs:file r_file_perms;
-allow gnss radio_device:chr_file rw_file_perms;
+allow oam_hisi system_data_file:dir { rw_dir_perms };
+allow oam_hisi system_data_file:file { rw_file_perms };
+allow oam_hisi oam_hisi:netlink_socket create_socket_perms;
+<<<<<<< HEAD
+allow oam_hisi hisi_log:file r_file_perms;
+=======
+allow oam_hisi hisi_log:file create_file_perms;
+allow oam_hisi hisi_log:dir create_dir_perms;
+>>>>>>> a3cb862... sepolicy: separate sepolicy patch per ROM + updates
+allow oam_hisi oam_hisi_device:chr_file rw_file_perms;

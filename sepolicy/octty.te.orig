@@ -14,22 +14,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# gnss
+# octty
 #
 
-type gnss, domain;
-type gnss_exec, exec_type, file_type;
-type gnss_device, dev_type, file_type;
-type gnss_data_file, file_type;
+type octty, domain;
+type octty_exec, exec_type, file_type;
 
-init_daemon_domain(gnss)
+init_daemon_domain(octty)
 
-allow gnss gnss_device:chr_file rw_file_perms;
-allow gnss system_data_file:sock_file create_file_perms;
-allow gnss system_data_file:file rw_file_perms;
-allow gnss gnss_data_file:dir create_dir_perms;
-allow gnss gnss_data_file:file create_file_perms;
-allow gnss properties_device:file r_file_perms;
-allow gnss kernel_devicetree:file r_file_perms;
-allow gnss sysfs:file r_file_perms;
-allow gnss radio_device:chr_file rw_file_perms;
+<<<<<<< HEAD
+=======
+allow octty properties_device:file r_file_perms;
+allow octty kernel_devicetree:file r_file_perms;
+allow octty sysfs:file r_file_perms;
+allow octty gps_device:chr_file rw_file_perms;
+>>>>>>> a3cb862... sepolicy: separate sepolicy patch per ROM + updates
