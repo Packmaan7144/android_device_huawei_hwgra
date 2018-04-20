@@ -1,14 +1,8 @@
-on early-init
-
 on init
     write /sys/module/block2mtd/parameters/block2mtd /dev/block/mmcblk0p7
     wait /dev/nve0
     chmod 0770 /dev/nve0
     chown root system /dev/nve0
-
-on early-fs
-
-on fs
 
 on post-fs
     chown system system /proc/uid_cputime/show_uid_stat
@@ -85,10 +79,7 @@ on boot
 service atcserver /system/bin/atc
     class main
     disabled
-
-###################
 # here start CM ril daemon
-###################
 service ril-daemon /system/bin/rild
     class late_start
     socket rild stream 660 root radio
@@ -122,13 +113,8 @@ on property:rild.rild1_ready_to_start=true
 
 on property:rild.rild1_ready_to_start=false
     symlink /dev/socket/rildm2 /dev/socket/rild2
-###################
 #End ril daemon
-###################
 
 on property:ro.hardware.alter=*
     write /proc/sys/kernel/hardware_alter ${ro.hardware.alter}
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
