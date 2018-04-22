@@ -1,4 +1,4 @@
-# Android Run Time
+
 ro.sys.fw.dex2oat_thread_count=8
 
 # ActivityManager
@@ -111,8 +111,42 @@ ro.product.varprofile=true
 #ro.cofig.onlinevideo.enabled=true
 ro.config.lvm_mode=true
 
-#Modem related?
-
+############################
+#phone prop single sim
+############################
+ro.config.dsds_mode=umts
+persist.radio.modem.cap=89894
+persist.dsds.enabled=false
+rild.rild1_ready_to_start=false
+rild.libpath=/system/lib64/libbalong-ril.so
+ro.config.hw_dsda=false
+ro.multi.rild=false
+#rild.libargs=-mmodem0 #typo error#
+rild.libargs=-m modem0
+ro.telephony.default_network=9
+############################
+#phone prop dual sim (disabled)
+############################
+#ro.config.dsds_mode=umts_gsm
+#persist.radio.modem.cap=89994
+#persist.dsds.enabled=true
+#rild.rild1_ready_to_start=true
+#rild.libargs1=-m modem1
+#rild.libpath=/system/lib64/libbalong-ril.so
+#ro.config.hw_dsda=true
+#ro.multi.rild=true
+#rild.libpath1=/system/lib64/libbalong-ril.so
+#rild.libargs=-m modem0
+#persist.radio.multisim.config=dsda
+#ro.telephony.default_network=9
+#############################
+# picked on github
+############################
+ro.telephony.ril.config=simactivation
+persist.radio.dont_use_dsd=true
+############################
+#Common with P8 single sim
+############################
 persist.radio.lte_enabled=true
 ro.check.modem_network=true
 persist.sys.dualcards=true
@@ -126,27 +160,24 @@ ro.config.hw_disable_cops=true
 ro.config.hw_ecclist_nocard=1+110,6+119,8+118
 ro.config.hw_ecclist_withcard=1+110,6+119,8+118
 ro.config.hw_globalEcc=true
+persist.radio.apm_sim_not_pwdn=1
 ro.config.hw_useCtrlSocket=true
 ro.config.updatelocation=true
 ro.networkstatus.delaytimer=20
 ro.config.ipv4.mtu=1400
-ro.gsm.systemui.carriericon=true
 gsm.fastdormancy.mode=1
-#gsm.fastdormancy.screen=2
-#gsm.fastdormancy.time_scroff=4000
-#ro.config.hw_hotswap_on=true
+gsm.fastdormancy.screen=2
+gsm.fastdormancy.time_scroff=1000
+ro.config.hw_hotswap_on=true
 ro.dual.sim.phone=true
 ro.config.hw_sim2airplane=false
 ro.config.show_sim_icon=true
 audioril.lib=libhuawei-audio-ril.so
-#ro.config.hw_opta=432
-#ro.config.hw_optb=999
-#ro.config.hw_show_4G_Plus_icon=true
-#ro.config.hw_show_network_icon=true
-#gsm.signalplus.support.tas=true
-#gsm.signalplus.support.xpass=true
-ro.config.signalplus.tas=true
-ro.config.signalplus.xpass=true
+
+ro.config.hw_opta=432
+ro.config.hw_optb=999
+
+ro.telephony.ril_class=HwHisiRIL
 
 #Audio related
 
@@ -233,10 +264,6 @@ ro.config.vc_call_steps=20
 
 persist.fw.force_adoptable=true
 
-#Custom RIL Class
-
-ro.telephony.ril_class=HwHisiRIL
-
 #Soft keys
 qemu.hw.mainkeys=0
 
@@ -244,31 +271,52 @@ wifi.interface=wlan0
 ro.config.enable_rcc=true
 debug.sf.no_hw_vsync=1
 
-rild.libargs=-m modem0
-rild.libargs1=-m modem1
-rild.libpath=/system/lib64/libbalong-ril.so
-rild.libpath1=/system/lib64/libbalong-ril.so
-rild.libpath2=/system/lib64/libbalong-ril-1.so
-rild.libargs2=-m modem1
-rild.rilLibPath=/system/lib64/libbalong-ril.so
-audioril.lib=libhuawei-audio-ril.so
-persist.radio.apm_sim_not_pwdn=1
-ro.config.hw_lte_support=true
-ro.config.hw_show_4G_Plus_icon=true
-ro.config.hw_show_network_icon=true
-ro.telephony.default_network=9
-ro.telephony.ril.config=simactivation
-telephony.lteOnCdmaDevice=0
-telephony.lteOnGsmDevice=1
-ro.config.hw_device_mode=clg_mode
-ro.config.full_network_support=true
-persist.dsds.enabled=true
-ro.config.dsds_mode=umts
-
-#Modem from phone.props
-
-persist.radio.modem.cap=89894
-rild.rild1_ready_to_start=true
-rild.rild_ready_to_start=true
-ro.config.hw_dsda=true
-ro.multi.rild=true
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+keyguard.no_require_sim=true
+ro.carrier=unknown
+ro.build.selinux=0
+persist.sys.root_access=3
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=288m
+dalvik.vm.heapsize=768m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+ro.hwui.texture_cache_size=72
+ro.hwui.layer_cache_size=48
+ro.hwui.path_cache_size=32
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=1024
+ro.com.google.clientidbase=android-huawei
+ro.config.notification_sound=Argon.ogg
+ro.config.alarm_alert=Hassium.ogg
+persist.sys.dun.override=0
+ro.cm.build.version.plat.sdk=7
+ro.cm.build.version.plat.rev=0
+media.sf.omx-plugin=libffmpeg_omx.so
+media.sf.extractor-plugin=libffmpeg_extractor.so
+ro.storage_manager.enabled=true
+ro.cm.version=14.1-20180419-UNOFFICIAL-hwgra
+ro.cm.releasetype=UNOFFICIAL
+ro.cm.build.version=14.1
+ro.modversion=14.1-20180419-UNOFFICIAL-hwgra
+ro.cmlegal.url=https://lineageos.org/legal
+ro.cm.display.version=14.1-20180419-UNOFFICIAL-hwgra
+ro.config.ringtone=Orion.ogg
+persist.sys.dalvik.vm.lib.2=libart.so
+dalvik.vm.isa.arm64.variant=cortex-a53
+dalvik.vm.isa.arm64.features=default
+dalvik.vm.isa.arm.variant=cortex-a53
+dalvik.vm.isa.arm.features=default
+dalvik.vm.lockprof.threshold=500
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+ro.expect.recovery_id=0x39c36abb874ab74dcebc1dae0ae2240affac638e000000000000000000000000

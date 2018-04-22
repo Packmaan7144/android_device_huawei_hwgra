@@ -30,16 +30,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := camera.c
-LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils
-LOCAL_MULTILIB := 32
-LOCAL_MODULE := libshim_camera
-LOCAL_LDLIBS := -llog
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_SRC_FILES := log.c
 LOCAL_MODULE := libshim_log
 LOCAL_MULTILIB := both
@@ -59,4 +49,11 @@ LOCAL_MODULE := libshim_gui
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := camera.cpp
+LOCAL_SHARED_LIBRARIES := libcamera_client
+LOCAL_MODULE := libshim_camera
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
