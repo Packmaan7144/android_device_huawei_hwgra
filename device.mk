@@ -191,19 +191,21 @@ PRODUCT_COPY_FILES += \
 	$(BOOT_RAMDISK_SRC)/etc/init.hi3635.rc:$(BOOT_RAMDISK_DST)/init.hi3635.rc \
 	$(BOOT_RAMDISK_SRC)/etc/init.recovery.hi3635.rc:$(BOOT_RAMDISK_DST)/init.recovery.hi3635.rc \
 	$(BOOT_RAMDISK_SRC)/etc/init.recovery.usb.rc:$(BOOT_RAMDISK_DST)/init.recovery.usb.rc \
+	$(BOOT_RAMDISK_SRC)/etc/init.environ.rc:$(BOOT_RAMDISK_DST)/init.environ.rc \
 	$(BOOT_RAMDISK_SRC)/etc/ueventd.hi3635.rc:$(BOOT_RAMDISK_DST)/ueventd.hi3635.rc \
 	$(BOOT_RAMDISK_SRC)/etc/ueventd.goldfish.rc:$(BOOT_RAMDISK_DST)/ueventd.goldfish.rc \
 	$(BOOT_RAMDISK_SRC)/etc/ueventd.ranchu.rc:$(BOOT_RAMDISK_DST)/ueventd.ranchu.rc \
 	$(BOOT_RAMDISK_SRC)/etc/init.hi3635.power.rc:$(BOOT_RAMDISK_DST)/init.hi3635.power.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.audio.rc:$(BOOT_RAMDISK_DST)/vendor.init.audio.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.balong_modem.rc:$(BOOT_RAMDISK_DST)/vendor.init.balong_modem.rc \
-	$(BOOT_RAMDISK_SRC)/etc/vendor.init.connectivity.bcm4334.rc:$(BOOT_RAMDISK_DST)/vendor.init.connectivity.bcm4339.rc \
+	$(BOOT_RAMDISK_SRC)/etc/vendor.init.connectivity.bcm4339.rc:$(BOOT_RAMDISK_DST)/vendor.init.connectivity.bcm4339.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.connectivity.gps.rc:$(BOOT_RAMDISK_DST)/vendor.init.connectivity.gps.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.connectivity.rc:$(BOOT_RAMDISK_DST)/vendor.init.connectivity.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.device.rc:$(BOOT_RAMDISK_DST)/vendor.init.device.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.extmodem.rc:$(BOOT_RAMDISK_DST)/vendor.init.extmodem.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.hi3635.rc:$(BOOT_RAMDISK_DST)/vendor.init.hi3635.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.hisi.rc:$(BOOT_RAMDISK_DST)/vendor.init.hisi.rc \
+	$(BOOT_RAMDISK_SRC)/etc/vendor.init.hisi.rc.P8:$(BOOT_RAMDISK_DST)/vendor.init.hisi.rc.P8 \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.manufacture.rc:$(BOOT_RAMDISK_DST)/vendor.init.manufacture.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.platform.rc:$(BOOT_RAMDISK_DST)/vendor.init.platform.rc \
 	$(BOOT_RAMDISK_SRC)/etc/vendor.init.post-fs-data.rc:$(BOOT_RAMDISK_DST)/vendor.init.post-fs-data.rc \
