@@ -92,6 +92,10 @@ BOARD_SUPPORTS_SOUND_TRIGGER := true
 #TARGET_RIL_VARIANT := proprietary
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
 
+# Optimizations 
+O3_OPTS := true
+GRAPHITE_OPTS := true
+
 # WIFI
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WLAN_DEVICE := bcmdhd

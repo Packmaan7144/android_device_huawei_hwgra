@@ -1,8 +1,14 @@
+on early-init
+
 on init
     write /sys/module/block2mtd/parameters/block2mtd /dev/block/mmcblk0p7
     wait /dev/nve0
     chmod 0770 /dev/nve0
     chown root system /dev/nve0
+
+on early-fs
+
+on fs
 
 on post-fs
     chown system system /proc/uid_cputime/show_uid_stat
@@ -80,7 +86,9 @@ service atcserver /system/bin/atc
     class main
     disabled
 
+###################
 # here start CM ril daemon
+###################
 service ril-daemon /system/bin/rild
     class late_start
     socket rild stream 660 root radio
@@ -96,14 +104,14 @@ service ril-daemon /system/bin/rild
     group radio cache inet misc audio sdcard_r sdcard_rw log system
     disabled
 #This is for the 2nd simcard in dual sim model
-#     service ril-daemon1 /system/bin/rild -c 1
-#     disabled
-#     class core
-#     socket rilds2 stream 660 root radio
-#     socket rild-debug1 stream 660 radio system
-#     socket rild-balong-test stream 660 radio system
-#     user root
-#     group radio cache inet misc audio sdcard_r sdcard_rw log
+     service ril-daemon1 /system/bin/rild -c 1
+     disabled
+     class core
+     socket rilds2 stream 660 root radio
+     socket rild-debug1 stream 660 radio system
+     socket rild-balong-test stream 660 radio system
+     user root
+     group radio cache inet misc audio sdcard_r sdcard_rw log
      
      on property:sys.userdata_is_ready=1
     start ril-daemon
@@ -114,12 +122,13 @@ on property:rild.rild1_ready_to_start=true
 
 on property:rild.rild1_ready_to_start=false
     symlink /dev/socket/rildm2 /dev/socket/rild2
+###################
 #End ril daemon
-
-# add service fingerprintd by Speedo
-#service fingerprintd /system/bin/fingerprintd
-#    class late_start
-#    user system
+###################
 
 on property:ro.hardware.alter=*
     write /proc/sys/kernel/hardware_alter ${ro.hardware.alter}
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
