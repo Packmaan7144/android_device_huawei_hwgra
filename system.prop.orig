@@ -1,4 +1,4 @@
-# Android Run Time
+
 ro.sys.fw.dex2oat_thread_count=8
 
 # ActivityManager
@@ -176,8 +176,11 @@ audioril.lib=libhuawei-audio-ril.so
 
 ro.config.hw_opta=432
 ro.config.hw_optb=999
+<<<<<<< HEAD
 
 ro.telephony.ril_class=HwHisiRIL
+=======
+>>>>>>> a6a872c46d1149a40a96bfbf1b608ababd2016ce
 
 #Audio related
 
@@ -270,6 +273,7 @@ qemu.hw.mainkeys=0
 wifi.interface=wlan0
 ro.config.enable_rcc=true
 debug.sf.no_hw_vsync=1
+<<<<<<< HEAD
 
 #
 # ADDITIONAL_BUILD_PROPERTIES
@@ -320,3 +324,5 @@ dalvik.vm.lockprof.threshold=500
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
 ro.expect.recovery_id=0x39c36abb874ab74dcebc1dae0ae2240affac638e000000000000000000000000
+=======
+>>>>>>> a6a872c46d1149a40a96bfbf1b608ababd2016ce
