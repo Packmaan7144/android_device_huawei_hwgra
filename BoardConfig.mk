@@ -87,7 +87,7 @@ BOARD_USES_GENERIC_AUDIO := false
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 
 # RIL
-#COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+#TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 #PROTOBUF_SUPPORTED := true
 #TARGET_RIL_VARIANT := proprietary
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
@@ -151,16 +151,17 @@ TARGET_USES_HISI_DTIMAGE := true
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 
-#'TARGET_KERNEL_SOURCE
-TARGET_KERNEL_SOURCE := kernel/huawei/kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-BOARD_USES_UNCOMPRESSED_BOOT := true
-BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CONFIG := merge_hi3635_defconfig
+# TARGET_KERNEL_SOURCE
+#TARGET_KERNEL_SOURCE := kernel/huawei/kernel
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#BOARD_USES_UNCOMPRESSED_BOOT := true
+#BOARD_KERNEL_IMAGE_NAME := Image
+#TARGET_USES_UNCOMPRESSED_KERNEL := true
+#TARGET_KERNEL_CONFIG := merge_hi3635_defconfig
 #HAVE_SELINUX := true
+TARGET_PREBUILT_KERNEL := device/huawei/hwgra/kernel
 
 # KERNEL CONFIG
 BOARD_KERNEL_CMDLINE := androidboot.hardware=hi3635 androidboot.selinux=permissive no_console_suspend=1 mem=3072M coherent_pool=512K mmcparts=mmcblk0:p1(vrl),p2(vrl_backup),p6(modemnvm_factory),p9(splash),p10(modemnvm_backup),p11(modemnvm_img),p12(modemnvm_system),p14(3rdmodemnvm),p15(3rdmodemnvmback),p17(modem_om),p20(modemnvm_update),p30(modem),p31(modem_dsp),p32(dfx),p33(3rdmodem) cpuidle_sysfs_switch=1
