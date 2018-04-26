@@ -193,7 +193,15 @@ on charger
 on fs
     #export LD_SHIM_LIBS "/system/bin/rild|system/lib64/libshim_icu.so:/system/lib/libril.so|system/lib/libshim_icu.so:/system/lib64/libril.so|system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|system/lib64/libshim_icu.so:/system/lib/hw/camera.hi3635.so|system/lib/libshim_camera.so:/system/lib64/hw/camera.hi3635.so|system/lib64/libshim_camera.so:/system/bin/recovery-persist|system/lib64/libhw_log.so"
 
-    export LD_SHIM_LIBS "/system/bin/logserver|libshim_log.so:/system/lib/libril.so|system/lib/libshim_icu.so:/system/lib64/libril.so|system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|system/lib64/libshim_icu.so:/system/lib/hw/camera.hi3635.so|system/lib/libshim_camera.so:/system/lib64/hw/camera.hi3635.so|system/lib64/libshim_camera.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/lib/libcamera_core.so|libshim_gui.so:/system/lib/libcamera_core.so|libshim_camera.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/vendor/lib/libwvm.so|libshim_wvm.so":/system/lib/libFNVfbEngineLib.so|libshim_gui.so:
+    #export LD_SHIM_LIBS "/system/bin/rild|system/lib64/libshim_icu.so:/system/lib/libril.so|system/lib/libshim_icu.so:/system/lib64/libril.so|system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|system/lib64/libshim_icu.so:/system/lib/hw/camera.hi3635.so|system/lib/libshim_camera.so:/system/lib64/hw/camera.hi3635.so|system/lib64/libshim_camera.so:/system/bin/recovery-persist|system/lib64/libhw_log.so"
+
+    #export LD_SHIM_LIBS "/system/bin/rild|system/lib64/libshim_icu.so:/system/lib/libril.so|system/lib/libshim_icu.so:/system/lib64/libril.so|system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|system/lib64/libshim_icu.so:/system/lib/hw/camera.hi3635.so|system/lib/libshim_camera.so:/system/lib64/hw/camera.hi3635.so|system/lib64/libshim_camera.so:/system/bin/recovery-persist|system/lib64/libhw_log.so:/system/lib/libcamera_client.so|system/lib/libshim_camera_client.so:/system/lib64/libcamera_client.so|system/lib64/libshim_camera_client.so:/system/lib/libmedia.so|system/lib/libshim_media.so:/system/lib64/libmedia.so|system/lib64/libshim_media.so:system/lib64/libmedia.so|system/lib/libshim_stagefright.so:/system/lib/libmedia.so|system/lib/libshim_stagefright.so:/system/bin/mediaserver|system/lib/libshim_stagefright.so:/system/lib/libmedia.so|system/lib/libshim_camera.so"
+
+    
+	#export LD_SHIM_LIBS "/system/bin/recovery-persist|system/lib64/libhw_log.so:/system/bin/rild|system/lib64/libshim_icu.so:/system/lib/libril.so|system/lib/libshim_icu.so:/system/lib64/libril.so|system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|system/lib64/libshim_icu.so:/system/lib64/libcamera_algo.so|libshim_algo.so:/system/lib64/libcamera_client.so|system/lib64/libshim_camera_client.so:/system/lib/libcamera_client.so|system/lib/libshim_camera_client.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so:libshim_camera.so:/system/lib64/libcutils.so|libshim.so:/system/lib/libcutils.so|libshim.so:/system/lib64/liblog.so|libshim.so:/system/lib/liblog.so|libshim.so:/system/lib64/libexif.so|libshim.so:/system/lib/libexif.so|libshim.so:/system/lib64/libaudio_route.so|libshim.so:/system/lib/libaudio_route.so|libshim.so:/system/bin/wpa_supplicant_hisi|libshim.so:/system/bin/hostapd|libshim.so:/system/vendor/lib/libwvm.so|libshim.so:system/lib64/libhw_log.so:/system/lib/libcamera_client.so"
+
+	export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib64/libcamera_algo.so|/system/lib64/libshim_algo.so:/system/lib64/libcamera_client.so|/system/lib64/libshim_camera_client.so:/system/lib/libcamera_client.so|/system/lib/libshim_camera_client.so:/system/lib/hw/camera.hi3635.so|/system/lib/libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_camera.so:/system/lib64/libcutils.so|/system/lib64/libshim.so:/system/lib/libcutils.so|/system/lib/libshim.so:/system/lib64/liblog.so|/system/lib64/libshim.so:/system/lib/liblog.so|/system/lib/libshim.so:/system/lib64/libexif.so|/system/lib64/libshim.so:/system/lib/libexif.so|/system/lib/libshim.so:/system/lib64/libaudio_route.so|/system/lib64/libshim.so:/system/lib/libaudio_route.so|/system/lib/libshim.so:/system/bin/wpa_supplicant_hisi|/system/lib/libshim.so:/system/bin/hostapd|/system/lib/libshim.so:/system/lib64/libhw_log.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_hwui.so:/system/lib/libcamera_algo.so|/system/lib/libshim_hwui.so:/system/lib64/hw/copybit.hi3635.so|/system/lib64/libshim_libgui.so:/system/lib/hw/copybit.hi3635.so|/system/lib/libshim_libgui.so"
+
 
     export ANDROID_STORAGE ""
 
@@ -552,11 +560,12 @@ service kmsgcat_cp /sbin/kmsgcat -r 4096 -n 25 -i /dev/cshell_log -f /data/hwzd_
 #    disabled
 #    oneshot
 
-#on property:sys.boot_completed=1 && property:ro.config.hw_perfhub=true
-#    start perfhub
+on property:sys.boot_completed=1 && property:ro.config.hw_perfhub=true
+    start perfhub
 
 service perfhub /system/bin/perfhub
-    class late_start
+    class core
     user system
     group system
-    disabled
+    onrestart restart HwCamCfgSvr
+    onrestart restart media
