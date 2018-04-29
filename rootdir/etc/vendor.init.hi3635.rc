@@ -195,7 +195,7 @@ on charger
 #    start hw_ueventd
 
 on fs
-    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libcamera_algo.so|/system/lib/libshim_algo.so:/system/lib64/libcamera_client.so|/system/lib64/libshim_camera_client.so:/system/lib/libcamera_client.so|/system/lib/libshim_camera_client.so:/system/lib/hw/camera.hi3635.so|/system/lib/libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_camera.so:/system/lib64/libcutils.so|/system/lib64/libshim.so:/system/lib/libcutils.so|/system/lib/libshim.so:/system/lib64/liblog.so|/system/lib64/libshim.so:/system/lib/liblog.so|/system/lib/libshim.so:/system/lib64/libexif.so|/system/lib64/libshim.so:/system/lib/libexif.so|/system/lib/libshim.so:/system/lib64/libaudio_route.so|/system/lib64/libshim.so:/system/lib/libaudio_route.so|/system/lib/libshim.so:/system/bin/wpa_supplicant_hisi|/system/lib/libshim.so:/system/bin/hostapd|/system/lib/libshim.so:/system/lib64/libhw_log.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_hwui.so:/system/lib/libcamera_algo.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_camera.so:/system/lib/libcamera_algo.so|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libcamera_algo.so|/system/lib/libshim_algo.so:/system/lib/hw/camera.hi3635.so|/system/lib/libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_camera.so:/system/lib64/libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_camera.so:/system/lib/libcamera_algo.so|libshim_camera.so:/system/lib/libhuaweiprocessing.so|/system/lib/libshim_icu.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_hwui.so:/system/lib/libcamera_algo.so|/system/lib/libshim_hwui.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so"
 
 
     export ANDROID_STORAGE ""
@@ -281,7 +281,6 @@ on early-boot
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=0755 
     
-
     write /splash2/sim/sim_pin_file.bin  "000000"
 
     chown root radio /sys/kernel/sim/sim0_hotplug_state
@@ -483,9 +482,6 @@ on boot
 
     chown system system /sys/class/leds/lcd_backlight0/brightness
     chmod 644 /sys/class/leds/lcd_backlight0/brightness
-
-
-
 
     chown system camera /dev/imgsysbrg_vdec0
     chmod 660 /dev/imgsysbrg_vdec0

@@ -43,7 +43,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := hwui.cpp
-LOCAL_SHARED_LIBRARIES := libui
+LOCAL_SHARED_LIBRARIES := libui libshim_hwui
 LOCAL_MODULE := libshim_hwui
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -95,7 +95,8 @@ LOCAL_SHARED_LIBRARIES := \
     libui \
     libgui \
     libsync \
-    libcamera_metadata
+    libcamera_metadata \
+    libshim_hwui
 
 LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/camera/include \

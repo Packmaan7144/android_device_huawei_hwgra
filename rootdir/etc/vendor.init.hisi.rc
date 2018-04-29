@@ -76,10 +76,6 @@ on early-boot
 on boot
     write /sys/kernel/debug/kmemleak scan=14400
 
-on property:sys.boot_completed=1
-       stop HwCamCfgSvr
-       
-
 service atcserver /system/bin/atc
     class main
     disabled

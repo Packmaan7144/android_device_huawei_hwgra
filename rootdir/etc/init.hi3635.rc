@@ -13,9 +13,7 @@ import /vendor.init.connectivity.rc
 import /vendor.init.device.rc
 import /vendor.init.extmodem.rc
 import /vendor.init.manufacture.rc
-import /vendor.init.performance.rc
 import /vendor.init.platform.rc
-import /vendor.init.protocol.rc
 
 #To allow modifications
 import /custom.init.mods.rc
