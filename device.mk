@@ -65,7 +65,6 @@ PRODUCT_PACKAGES += \
     libshim_log \
     libshim_algo \
     libshim_hwui \
-    libshim_camera
 
 # debug
 PRODUCT_PACKAGES += \
@@ -106,8 +105,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
-    $(LOCAL_PATH)/configs/etc/permissions/android.hardware.huawei.xml:system/etc/permissions/android.hardware.huawei.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    $(LOCAL_PATH)/prebuilts/permissions/android.hardware.huawei.xml:system/etc/permissions/android.hardware.huawei.xml \
+    $(LOCAL_PATH)/prebuilts/permissions/com.hisi.perfhub.xml:system/etc/permissions/com.hisi.perfhub.xml 
 
 # MEDIA
 PRODUCT_COPY_FILES += \
@@ -245,6 +245,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.zygote=zygote64_32 \
 	persist.logd.logpersistd=logcatd \
 	sys.init_log_level=3
+
+PRODUCT_PACKAGES += \
+    com.hisi.perfhub
 
 # RIL
 #PRODUCT_PROPERTY_OVERRIDES += \
