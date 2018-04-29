@@ -63,7 +63,9 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libhw_log \
     libshim_log \
-    libshim_algo
+    libshim_algo \
+    libshim_hwui \
+    libshim_camera
 
 # debug
 PRODUCT_PACKAGES += \
