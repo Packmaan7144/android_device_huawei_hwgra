@@ -244,7 +244,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	persist.sys.root_access=3 \
 	ro.zygote=zygote64_32 \
 	persist.logd.logpersistd=logcatd \
-	sys.init_log_level=3
+	sys.init_log_level=3 \
+	persist.debug.wfd.enable=1
 
 PRODUCT_PACKAGES += \
     com.hisi.perfhub
