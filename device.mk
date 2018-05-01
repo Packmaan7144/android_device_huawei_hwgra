@@ -186,8 +186,6 @@ BOOT_RAMDISK_SRC = $(LOCAL_PATH)/rootdir
 BOOT_RAMDISK_DST = root
 PRODUCT_COPY_FILES += \
 	$(BOOT_RAMDISK_SRC)/fstab.hi3635:$(BOOT_RAMDISK_DST)/fstab.hi3635 \
-	$(BOOT_RAMDISK_SRC)/fstab.goldfish:$(BOOT_RAMDISK_DST)/fstab.goldfish \
-	$(BOOT_RAMDISK_SRC)/fstab.ranchu:$(BOOT_RAMDISK_DST)/fstab.ranchu \
 	$(BOOT_RAMDISK_SRC)/etc/custom.init.mods.rc:$(BOOT_RAMDISK_DST)/custom.init.mods.rc \
 	$(BOOT_RAMDISK_SRC)/etc/custom.init.usb.rc:$(BOOT_RAMDISK_DST)/custom.init.usb.rc \
 	$(BOOT_RAMDISK_SRC)/etc/init.hi3635.rc:$(BOOT_RAMDISK_DST)/init.hi3635.rc \
