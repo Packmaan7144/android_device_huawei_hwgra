@@ -81,7 +81,7 @@ typedef struct other_settings {
 static power_profile_cpu0 profiles0[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
         .go_hispeed_load = 99,
-        .hispeed_freq = 1209600,
+        .hispeed_freq = 806400,
         .io_is_busy = 0,
         .boostpulse_duration = 80000,
         .target_loads = "95",
@@ -169,7 +169,7 @@ static power_profile_other profiles2[PROFILE_MAX] = {
         .ddr_max_freq = 800000000,
         .ddr_min_freq = 120000000,
         .ddr_polling_interval = 50,
-        .gpu_max_freq = 600000000,
+        .gpu_max_freq = 680000000,
         .gpu_min_freq = 288000000,
         .gpu_polling_interval = 50,
         .animation_boost = 1,
