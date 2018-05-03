@@ -17,6 +17,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product-if-exists, vendor/huawei/hwgra/hwgra-vendor.mk)
+$(call inherit-product, build/target/product/core_64_bit.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
 	device/huawei/hwgra/overlay
@@ -70,6 +71,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	dlopen32 \
 	dlopen64
+
+# File System
+PRODUCT_PACKAGES += \
+	make_ext4fs \
+	setup_fs
+
+# Fix camera
+PRODUCT_PACKAGES += \
+    	libstlport \
+    	libCameraHwExtend
+
+
+###To start stock camera
+PRODUCT_PACKAGES += \
+	com.huawei.cust \
+	camera.hi3635 \
+	libcamera_client \
+	libcamera_metadata
 
 # Bluetooth config
 PRODUCT_COPY_FILES += \
@@ -126,9 +145,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-# LIGHTS
+# HARDWARE
 PRODUCT_PACKAGES += \
-	lights.hi3635
+	hwcomposer.hi3635 \
+	libcopybit_wrapper \
+	lights.hi3635 \
+	sensors.hi3635
+	#power.hi3635 
 
 # AUDIO
 PRODUCT_PACKAGES += \
@@ -173,10 +196,6 @@ PRODUCT_PACKAGES += \
 	hostapd \
 	wificond \
 	wifilogd
-
-# HWC
-PRODUCT_PACKAGES += \
-	hwcomposer.hi3635
 
 # RAMDISK
 PRODUCT_PACKAGES += \
@@ -241,27 +260,15 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	sys.init_log_level=3 \
 	persist.debug.wfd.enable=1
 
+# Non-device-specific props
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.locationfeatures=1 \
+    ro.setupwizard.mode=OPTIONAL \
+    ro.setupwizard.enable_bypass=1 \
+    ro.config.sync=yes
+
 PRODUCT_PACKAGES += \
     com.hisi.perfhub
-
-# RIL
-#PRODUCT_PROPERTY_OVERRIDES += \
-#	rild.libargs=-m modem0 \
-#	rild.libargs1=-m modem1 \
-#	rild.libpath=/system/lib64/libbalong-ril.so \
-#	audioril.lib=libhuawei-audio-ril.so \
-#	persist.radio.apm_sim_not_pwdn=1 \
-#	ro.config.hw_lte_support=true \
-#	ro.config.hw_show_4G_Plus_icon=true \
-#	ro.config.hw_show_network_icon=true \
-#	ro.telephony.default_network=9 \
-#	ro.telephony.ril.config=simactivation \
-#	telephony.lteOnCdmaDevice=0 \
-#	telephony.lteOnGsmDevice=1 \
-#	ro.config.hw_device_mode=clg_mode \
-#	ro.config.full_network_support=true \
-#	persist.dsds.enabled=true \
-#	ro.config.dsds_mode=umts
 
 # DALVIK AND MEMORY
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
