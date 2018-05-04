@@ -67,6 +67,10 @@ PRODUCT_PACKAGES += \
     libshim_algo \
     libshim_hwui \
 
+# GPS
+PRODUCT_PACKAGES += \
+	libgccdemangle
+
 # debug
 PRODUCT_PACKAGES += \
 	dlopen32 \

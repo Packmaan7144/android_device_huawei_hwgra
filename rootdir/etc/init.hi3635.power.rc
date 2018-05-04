@@ -9,10 +9,12 @@ on early-boot
 on property:sys.boot_completed=1
     #Trigger the default profile after boot
     setprop sys.perf.profile 1
+    trigger enable-low-power
 
 on property:init.svc.recovery=running
     #Trigger the default profile in recovery
     setprop sys.perf.profile 1
+    trigger enable-low-power
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler raw
