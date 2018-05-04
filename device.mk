@@ -76,23 +76,11 @@ PRODUCT_PACKAGES += \
 	dlopen32 \
 	dlopen64
 
-# File System
-PRODUCT_PACKAGES += \
-	make_ext4fs \
-	setup_fs
-
 # Fix camera
 PRODUCT_PACKAGES += \
-    	libstlport \
-    	libCameraHwExtend
-
-
-###To start stock camera
-PRODUCT_PACKAGES += \
-	com.huawei.cust \
-	camera.hi3635 \
-	libcamera_client \
-	libcamera_metadata
+	libstlport \
+	libCameraHwExtend \
+	camera.hi3635 
 
 # Bluetooth config
 PRODUCT_COPY_FILES += \
@@ -152,7 +140,6 @@ PRODUCT_COPY_FILES += \
 # HARDWARE
 PRODUCT_PACKAGES += \
 	hwcomposer.hi3635 \
-	libcopybit_wrapper \
 	lights.hi3635 \
 	sensors.hi3635 
 	#power.hi3635 
@@ -267,9 +254,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # Non-device-specific props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
-    ro.setupwizard.mode=OPTIONAL \
-    ro.setupwizard.enable_bypass=1 \
-    ro.config.sync=yes
 
 PRODUCT_PACKAGES += \
     com.hisi.perfhub
