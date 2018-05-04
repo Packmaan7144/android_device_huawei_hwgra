@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
 	hwcomposer.hi3635 \
 	libcopybit_wrapper \
 	lights.hi3635 \
-	sensors.hi3635
+	sensors.hi3635 
 	#power.hi3635 
 
 # AUDIO
