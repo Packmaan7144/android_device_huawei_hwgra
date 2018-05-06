@@ -374,3 +374,5 @@ Camera::RecordingProxy::RecordingProxy(const sp<Camera>& camera)
 }
 
 }; // namespace android
+
+void _ZN7android8hardware14ICameraService10descriptorE() {}
