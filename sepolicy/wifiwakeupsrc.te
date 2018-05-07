@@ -13,11 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
+# wifiwakeupsrc
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
+type wifiwakeupsrc, domain;
+type wifiwakeupsrc_exec, exec_type, file_type;
 
-init_daemon_domain(thermal-daemon)
+init_daemon_domain(wifiwakeupsrc)
 

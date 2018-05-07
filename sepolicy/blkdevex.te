@@ -13,11 +13,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
-
-init_daemon_domain(thermal-daemon)
-
+type cust_blkdev, dev_type,file_type;
+type userdata_blkdev, dev_type,file_type;
+type oeminfo_blkdev, dev_type,file_type;
+type cache_blkdev, dev_type,file_type;
+type splash2_blkdev, dev_type,file_type;
+type zram0_blkdev, dev_type,file_type;
+type secure_storage_blkdev, dev_type,file_type;

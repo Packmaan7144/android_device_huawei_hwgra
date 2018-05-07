@@ -13,11 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
-
-init_daemon_domain(thermal-daemon)
-
+type irda_device, dev_type, file_type;
+type teecd_device, dev_type, file_type;
+type modem_log_file, file_type;
+type teecd_blkdev, dev_type, file_type;
+type modem_device, dev_type, file_type;
+type make_ext4fs_blkdev, dev_type, file_type;

@@ -13,11 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
-
-init_daemon_domain(thermal-daemon)
-
+allow fingerprintd tee:unix_stream_socket { connectto };
+allow fingerprintd teecd_device:chr_file rw_file_perms;
+allow fingerprintd tee:fd { use };
+allow fingerprintd fingerprint_device:chr_file rw_file_perms;
+allow fingerprintd dmd_device:chr_file rw_file_perms;
+allow fingerprintd sysfs:file rw_file_perms;

@@ -13,11 +13,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
+#
+# gnss
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
+type gnss, domain;
+type gnss_exec, exec_type, file_type;
+type gnss_device, dev_type, file_type;
+type gnss_data_file, file_type;
 
-init_daemon_domain(thermal-daemon)
+init_daemon_domain(gnss)
 
+allow gnss gnss_device:chr_file rw_file_perms;
+allow gnss system_data_file:sock_file rw_file_perms;
+allow gnss gnss_data_file:dir r_dir_perms;
+allow gnss gnss_data_file:file rw_file_perms;

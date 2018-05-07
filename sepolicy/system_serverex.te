@@ -13,11 +13,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
-
-init_daemon_domain(thermal-daemon)
-
+allow system_server init:unix_dgram_socket rw_socket_perms;
+allow system_server zygote:binder { call transfer };
+allow system_server flp_device:chr_file rw_file_perms;
+allow system_server hwcamcfgsvr:binder { call transfer };

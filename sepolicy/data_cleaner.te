@@ -13,11 +13,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
+#
+# data_cleaner
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
+type data_cleaner, domain;
+type data_cleaner_exec, exec_type, file_type;
+type hisi_log, file_type;
 
-init_daemon_domain(thermal-daemon)
+init_daemon_domain(data_cleaner)
 
+allow data_cleaner hisi_log:dir rw_dir_perms;
+allow data_cleaner hisi_log:file rw_file_perms;
+allow data_cleaner tombstone_data_file:dir rw_dir_perms;
+allow data_cleaner tombstone_data_file:file rw_file_perms;
+allow data_cleaner shell_data_file:dir rw_dir_perms;
+allow data_cleaner shell_data_file:file rw_file_perms;
+allow data_cleaner self:capability { dac_override };
+allow data_cleaner system_data_file:dir rw_dir_perms;

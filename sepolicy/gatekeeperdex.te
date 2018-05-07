@@ -13,11 +13,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# thermal-daemon
 #
 
-type thermal-daemon, domain;
-type thermal-daemon_exec, exec_type, file_type;
-
-init_daemon_domain(thermal-daemon)
+allow gatekeeperd tee:unix_stream_socket { connectto rw_socket_perms };
+allow gatekeeperd teecd_device:chr_file rw_file_perms;
+allow gatekeeperd tee:fd { use };
 
