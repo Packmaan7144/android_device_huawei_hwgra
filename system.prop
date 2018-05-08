@@ -221,3 +221,8 @@ dalvik.vm.lockprof.threshold=500
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
 ro.expect.recovery_id=0x39c36abb874ab74dcebc1dae0ae2240affac638e000000000000000000000000
+
+# CAMERA
+persist.camera.HAL3.enabled=0
+camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.google.android.GoogleCamera
+media.stagefright.legacyencoder=true

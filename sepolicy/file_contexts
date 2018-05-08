@@ -154,7 +154,7 @@
 /dev/block/mmcblk0p8 		u:object_r:oeminfo_blkdev:s0
 /dev/block/mmcblk0p36 		u:object_r:cache_blkdev:s0
 /dev/block/mmcblk0p19 		u:object_r:splash2_blkdev:s0
-/dev/block/zram0 		u:object_r:zram0_blkdev:s0
+/dev/block/zram0 			u:object_r:zram0_blkdev:s0
 /dev/block/mmcblk0p13		u:object_r:secure_storage_blkdev:s0
 
 # Logs
@@ -184,3 +184,6 @@
 
 # GNSS data files
 /data/gnss(/.*)?		u:object_r:gnss_data_file:s0
+
+# Camera Los14
+/sys/class/camerafs/node(/.*)?	u:object_r:sysfs:s0

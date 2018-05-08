@@ -19,3 +19,6 @@ allow init mediaserver:binder { call transfer };
 allow mediaserver default_android_service:service_manager { find };
 allow mediaserver mediaserver:netlink_kobject_uevent_socket create_socket_perms;
 allow mediaserver hwcamcfgsvr:binder { call transfer };
+
+# Camera
+allow mediaserver sysfs:file { read write };
