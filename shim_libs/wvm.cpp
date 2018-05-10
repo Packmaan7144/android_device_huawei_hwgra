@@ -41,3 +41,4 @@ extern bool _ZNK7android11MediaSource11ReadOptions14getNonBlockingEv(void * obj)
     return rop->getNonBlocking();
 }
 }
+

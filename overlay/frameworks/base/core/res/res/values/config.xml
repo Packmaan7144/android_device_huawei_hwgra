@@ -383,4 +383,8 @@
 
     <!-- Enable blur support >
     <bool name="config_ui_blur_enabled">true</bool-->
+
+    <!-- Whether device supports double tap to wake -->
+    <!-- COMING SOON -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 </resources>
