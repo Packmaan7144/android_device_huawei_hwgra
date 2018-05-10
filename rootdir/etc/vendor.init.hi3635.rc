@@ -194,8 +194,7 @@ on charger
     start oeminfo_nvm
 
 on fs
-    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libcamera_algo.so|/system/lib/libshim_algo.so:/system/lib/hw/camera.hi3635.so|/system/lib/libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_camera.so:/system/lib64/libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_camera.so:/system/lib/libcamera_algo.so|libshim_camera.so:/system/lib/libhuaweiprocessing.so|/system/lib/libshim_icu.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_hwui.so:/system/lib/libcamera_algo.so|/system/lib/libshim_hwui.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/vendor/lib/libwvm.so|libshim_wvm.so:/system/lib/libwvm.so|libshim_wvm.so:/system/lib/libcameraservice.so|/system/lib/libshim_camera_client.so:/system/lib64/libcameraservice.so|/system/lib64/libshim_camera_client.so:/system/lib/libcameraservice.so|libshim_camera.so:/system/lib64/libcameraservice.so|libshim_camera.so"
-
+    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libcamera_algo.so|/system/lib/libshim_algo.so:/system/lib/libhuaweiprocessing.so|/system/lib/libshim_icu.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_hwui.so:/system/lib/libcamera_algo.so|/system/lib/libshim_hwui.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/vendor/lib/libwvm.so|libshim_wvm.so:/system/lib/libwvm.so|libshim_wvm.so:/system/lib/libcamera_core.so|libshim_camera.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libcamera_core.so|libshim_gui.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/hw/camera.hi3635.so|/system/lib/libshim_metadata_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|/system/lib/libshim_metadata_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_metadata_camera.so:/system/lib/libcamera_algo.so|libshim_metadata_camera.so"
 
     export ANDROID_STORAGE ""
 
@@ -293,23 +292,23 @@ on boot
     chown system system /sys/class/leds/torch_front/flash_thermal_protect
     chmod 664 /sys/class/leds/torch_front/flash_thermal_protect
 
-    chown system system /sys/class/camerafs/node/dual_leds
-    chmod 664 /sys/class/camerafs/node/dual_leds
-    chown system system /sys/class/camerafs/node/cam_number
+    chown media system /sys/class/camerafs/node/cam_number
     chmod 664 /sys/class/camerafs/node/cam_number
-    chown system system /sys/class/camerafs/node/lightness
-    chmod 664 /sys/class/camerafs/node/lightness
-    chown system system /sys/class/camerafs/node/front_dual_leds
+    chown media system /sys/class/camerafs/node/dual_leds
     chmod 664 /sys/class/camerafs/node/dual_leds
-    chown system system /sys/class/camerafs/node/front_lightness
+    chown media system /sys/class/camerafs/node/lightness
     chmod 664 /sys/class/camerafs/node/lightness
-    chown system system /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
+    chown media system /sys/class/camerafs/node/front_dual_leds
+    chmod 664 /sys/class/camerafs/node/dual_leds
+    chown media system /sys/class/camerafs/node/front_lightness
+    chmod 664 /sys/class/camerafs/node/lightness
+    chown media system /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
-    chown system system /sys/bus/platform/drivers/huawei,altek6045/test_ois
+    chown media system /sys/bus/platform/drivers/huawei,altek6045/test_ois
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/test_ois
-    chown system system /sys/bus/platform/drivers/huawei,altek6045/check_ois
+    chown media system /sys/bus/platform/drivers/huawei,altek6045/check_ois
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/check_ois
-    chown system system /sys/bus/platform/drivers/huawei,altek6045/test_pipe
+    chown media system /sys/bus/platform/drivers/huawei,altek6045/test_pipe
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/test_pipe
 
     chmod 660 /proc/hifidsp/hifi
