@@ -28,9 +28,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
 	frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
 	frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-	packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
 	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
-	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm.conf
+	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf \
+	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
+	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf
 
 # GPS libs
 #PRODUCT_COPY_FILES += \
@@ -41,7 +42,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
     $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
-    $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml
+    $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml \
+    $(LOCAL_PATH)/prebuilts/gps4752.conf.xml:system/etc/gps4752.conf.xml
 
 # AUDIO CONFIG
 PRODUCT_COPY_FILES += \
@@ -66,6 +69,7 @@ PRODUCT_PACKAGES += \
     libshim_log \
     libshim_algo \
     libshim_hwui \
+    libshim_gpsd
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -141,8 +145,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	hwcomposer.hi3635 \
 	lights.hi3635 \
-	sensors.hi3635 
-	#power.hi3635 
+	sensors.hi3635 \
+	power.hi3635 
 
 # AUDIO
 PRODUCT_PACKAGES += \
@@ -175,9 +179,11 @@ PRODUCT_PACKAGES += \
 	com.android.nfc_extras \
 	com.nxp.nfc.nq \
 	nfc_nci.pn54x.default \
-	NQNfcNci \
 	nqnfcee_access.xml \
 	nqnfcse_access.xml \
+    NQNfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
 	Tag
 
 # WIFI
