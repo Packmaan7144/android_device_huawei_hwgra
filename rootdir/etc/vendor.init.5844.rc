@@ -11,7 +11,7 @@ on fs
 on post-fs
 
 on post-fs-data
-	mkdir /data/nfc
+	mkdir /data/nfc 0755 nfc nfc
 	chown nfc nfc /data/nfc
 
 on early-boot
@@ -59,4 +59,5 @@ service HwCamCfgSvr /system/bin/HwCamCfgSvr hi3635 GRACE
     class main
     user media
     group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
-
+    ioprio rt 4
+    writepid /dev/cpuset/system-background/tasks

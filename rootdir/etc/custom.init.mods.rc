@@ -25,14 +25,8 @@ on init
 	#rite /dev/cpuset/system-background/mems 0
 	#write /dev/cpuset/top-app/cpus 0-7
 
-on init
-    setprop persist.camera.HAL3.enabled 0
-
 on early-boot
     start HwCamCfgSvr hi3635 GRACE
-
-    chown system system /dev/video1
-    chmod 0664 /dev/video1
 
 on enable-low-power
 
