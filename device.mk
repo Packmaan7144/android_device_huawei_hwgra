@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml \
     $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml \
-    $(LOCAL_PATH)/prebuilts/gps4752.conf.xml:system/etc/gps4752.conf.xml
+    $(LOCAL_PATH)/prebuilts/gps4752.conf:system/etc/gps4752.conf
 
 # AUDIO CONFIG
 PRODUCT_COPY_FILES += \
@@ -145,7 +145,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	hwcomposer.hi3635 \
 	lights.hi3635 \
-	sensors.hi3635 \
+	#sensors.hi3635 \
 	power.hi3635 
 
 # AUDIO

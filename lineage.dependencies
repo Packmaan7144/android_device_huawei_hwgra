@@ -14,4 +14,5 @@
     {
        "repository": "android_external_stlport",
        "target_path": "external/stlport"
+    }
 ]
