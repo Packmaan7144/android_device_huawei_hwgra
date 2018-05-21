@@ -178,6 +178,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FlipFlap
 
+PRODUCT_PACKAGES += \
+    flp.conf \
+    gps.conf \
+    izat.conf \
+    sap.conf
+
+PRODUCT_PACKAGES += \
+	gps.hi3635
+
 # NFC
 PRODUCT_PACKAGES += \
 	com.android.nfc_extras \
