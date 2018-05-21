@@ -5,11 +5,6 @@ ro.sys.fw.dex2oat_thread_count=8
 ro.config.max_starting_bg=8
 ro.sys.fw.use_trim_settings=true
 
-#Huawei Perfhub is related to camera
-ro.config.hw_perfhub=true
-
-build.hisi_perf_opt=true
-
 #add props
 ro.adb.secure=0
 ro.secure=0
@@ -32,7 +27,6 @@ ro.balong_debug.port_num=8
 ro.product.platform.pseudonym=1ARB9CV
 ro.tui.service=true
 ro.vr_display.service=true
-debug.hwui.render_dirty_regions=false
 bastet.service.enable=true
 ro.sys.umsdirtyratio=2
 ro.product.cpuinfo.normal=Hisilicon_Kirin_930
@@ -56,6 +50,21 @@ ro.config.hw_channel_info=0,0,0,0
 ro.product.hardwareversion=HL2UGRACEM
 persist.radio.apm_sim_not_pwdn=1
 ro.config.fm_type=libbcmfm_if
+
+ro.hwui.texture_cache_size=72
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.layer_cache_size=48
+ro.hwui.path_cache_size=32
+ro.hwui.shape_cache_size=2
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.gradient_cache_size=1
+ro.hwui.text_large_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_small_cache_width=1024
+ro.hwui.r_buffer_cache_size=8
+debug.hwui.render_dirty_regions=false
+debug.sf.no_hw_vsync=1
 
 ############################
 #phone prop single sim
@@ -117,6 +126,7 @@ ro.dual.sim.phone=true
 ro.config.hw_sim2airplane=false
 ro.config.show_sim_icon=true
 audioril.lib=libhuawei-audio-ril.so
+persist.radio.add_power_save=1
 
 ro.telephony.ril_class=HwHisiRIL
 
@@ -128,7 +138,6 @@ ro.am.reschedule_service=true
 
 #Better signal?
 persist.cust.tel.eons=1
-ro.config.hw_fast_dormancy=1
 
 #Better vocie quality
 ro.ril.enable.amr.wideband=1
@@ -136,10 +145,6 @@ ro.ril.enable.amr.wideband=1
 #IPv4 & IPv6
 persist.telephony.support.ipv6=1
 persist.telephony.support.ipv4=1
-
-#No ring delay
-ro.telephony.call_ring.delay=0
-ring.delay=0
 
 #May fix a black screen issue related to
 ro.lge.proximity.delay=25
@@ -156,9 +161,6 @@ ro.config.nocheckin=1
 ro.config.vc_call_vol_steps=15
 ro.config.media_vol_steps=30
 
-#No high volume warning
-ro.config.hw.security_volume=31
-
 #MTP & Sdcard related
 persist.fw.force_adoptable=true
 
@@ -167,7 +169,6 @@ qemu.hw.mainkeys=0
 
 wifi.interface=wlan0
 ro.config.enable_rcc=true
-debug.sf.no_hw_vsync=1
 
 #Tethering
 persist.sys.usb.config.extra=none
@@ -177,3 +178,30 @@ persist.camera.HAL3.enabled=0
 camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.google.android.GoogleCamera
 media.stagefright.legacyencoder=true
 camera2.portability.force_api=1
+persist.camera.hal.debug=0
+
+ro.config.camera_target_track=true
+ro.config.hw_auto_scene=true
+ro.config.hw_burst_snapshot=true
+ro.config.hw_camera_bestShot=true
+ro.config.hw_camera_refocus=true
+ro.config.hw_manual_focus=true
+ro.config.hw_camera_blureffect=false
+ro.config.hw_camera_davinci=true
+ro.config.hw_camera_docbeauty=true
+ro.config.hw_camera_hdr=true
+ro.config.hw_camera_makeup=true
+ro.config.speed_control_enable=true
+ro.config.widevine_level3=true
+ro.config.hw_camera_mfd=true
+ro.config.hw_camera_nicefood=true
+ro.config.hw_camera_omron=true
+ro.config.hw_camera_refocus=true
+ro.config.hw_camera_smartae=true
+ro.config.hw_camera_zsl=true
+ro.config.hw_manual_focus=true
+ro.config.hw_photo_beauty=true
+ro.config.hw_video_beauty=true
+ro.config.small.previewpos=left
+ro.hwcamera.effectsdiscameraId=true
+ro.hwcamera.previeweffects=true
