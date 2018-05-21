@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	flp.default
 
+# FLIPFLAP
+PRODUCT_PACKAGES += \
+    FlipFlap
+
 # NFC
 PRODUCT_PACKAGES += \
 	com.android.nfc_extras \
