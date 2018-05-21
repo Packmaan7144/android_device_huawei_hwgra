@@ -169,6 +169,9 @@ wifi.interface=wlan0
 ro.config.enable_rcc=true
 debug.sf.no_hw_vsync=1
 
+#Tethering
+persist.sys.usb.config.extra=none
+
 # CAMERA
 persist.camera.HAL3.enabled=0
 camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.google.android.GoogleCamera
