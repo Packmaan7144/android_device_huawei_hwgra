@@ -281,6 +281,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
 
+# KEYPAD
+PRODUCT_PACKAGES += \
+	cyttsp5_mt.kl
+
 # DALVIK AND MEMORY
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)

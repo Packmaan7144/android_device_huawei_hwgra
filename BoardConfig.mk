@@ -218,8 +218,10 @@ AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# TAP TO WAKE
+# DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/wakeup_gesture_enable"
+#DT2W Node
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/easy_wakeup_gesture"
 
 # inherit from the proprietary version
 -include vendor/huawei/hwgra/BoardConfigVendor.mk
