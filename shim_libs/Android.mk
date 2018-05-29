@@ -15,6 +15,17 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_C_INCLUDES += \
+    external/libexif \
+    frameworks/av
+
+LOCAL_MODULE := libshim
+LOCAL_SRC_FILES := shim.cpp
+LOCAL_SHARED_LIBRARIES := liblog libexif libmedia libstagefright_foundation
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := libgui liblog libutils
 LOCAL_SRC_FILES := gpsd.cpp
 LOCAL_MODULE := libshim_gpsd

@@ -15,8 +15,6 @@
 
 LOCAL_PATH := device/huawei/hwgra
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
 # OTA ASSERT
 TARGET_OTA_ASSERT_DEVICE := hi3635,GRA-L09,hwgra,HWGRA,gra_l09,huawei_p8,ascend_p8,P8,grace,GRACE
 
@@ -25,6 +23,9 @@ BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     $(LOCAL_PATH)/cmhw
+
+### FONTS
+EXTENDED_FONT_FOOTPRINT := true
 
 # WEBGL
 ENABLE_WEBGL := true
@@ -38,7 +39,6 @@ EXPERIMENTAL_USE_JAVA8 := true
 # DEBUG
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
 LOG_NDEBUG := 0
-
 
 # BOOTLOADER
 TARGET_BOOTLOADER_BOARD_NAME := hi3635
@@ -60,7 +60,6 @@ HEALTHD_BACKLIGHT_LEVEL := 60
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
 
 # SCREEN
 DEVICE_RESOLUTION := 1080x1920
@@ -78,7 +77,6 @@ BOARD_NFC_CHIPSET := pn547
 NXP_CHIP_TYPE := 1
 
 # GPS
-TARGET_GPS_HAL_PATH := $(LOCAL_PATH)/gps
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
@@ -115,12 +113,12 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_NVRAM_PATH := "/vendor/firmware/nvram4334_hw.txt"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcm4334_hw.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcm4334_apsta_hw.bin"
+WIFI_DRIVER_FW_PATH_STA := "system/vendor/firmware/fw_bcm4334_hw.bin"
+WIFI_DRIVER_FW_PATH_AP := "system/vendor/firmware/fw_bcm4334_apsta_hw.bin"
 WIFI_BAND := 802_11_ABGN
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/vendor/firmware/fw_bcm4334_hw.bin nvram_path=/system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
-WIFI_DRIVER_MODULE_P2P := "firmware_path=/system/vendor/firmware/fw_bcm4334_apsta_hw.bin nvram_path=/system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
-WIFI_DRIVER_MODULE_AP_ARG := "firmware_path=/system/vendor/firmware/fw_bcm4334_apsta_hw.bin nvram_path=/system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=system/vendor/firmware/fw_bcm4334_hw.bin nvram_path=system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
+WIFI_DRIVER_MODULE_P2P := "firmware_path=system/vendor/firmware/fw_bcm4334_apsta_hw.bin nvram_path=system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
+WIFI_DRIVER_MODULE_AP_ARG := "firmware_path=system/vendor/firmware/fw_bcm4334_apsta_hw.bin nvram_path=system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
 BOARD_LEGACY_NL80211_STA_EVENTS := true
 BOARD_NO_APSME_ATTR := true
 BOARD_HAVE_BLUETOOTH := true
@@ -203,7 +201,7 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi3635
 # DON'T BUILD TWRP
-# RECOVERY_VARIANT := twrp
+#RECOVERY_VARIANT := twrp
 #-include $(LOCAL_PATH)twrp.mk
 
 # FM RADIO
@@ -217,8 +215,6 @@ AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/wakeup_gesture_enable"
 #DT2W Node
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchscreen/easy_wakeup_gesture"
 

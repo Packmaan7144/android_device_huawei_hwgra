@@ -15,8 +15,7 @@
 #
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-$(call inherit-product-if-exists, vendor/huawei/hwgra/hwgra-vendor.mk)
+$(call inherit-product, vendor/huawei/hwgra/hwgra-vendor.mk)
 $(call inherit-product, build/target/product/core_64_bit.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
@@ -177,15 +176,6 @@ PRODUCT_PACKAGES += \
 # FLIPFLAP
 PRODUCT_PACKAGES += \
     FlipFlap
-
-PRODUCT_PACKAGES += \
-    flp.conf \
-    gps.conf \
-    izat.conf \
-    sap.conf
-
-PRODUCT_PACKAGES += \
-	gps.hi3635
 
 # NFC
 PRODUCT_PACKAGES += \
