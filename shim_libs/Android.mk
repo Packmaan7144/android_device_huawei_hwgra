@@ -33,13 +33,6 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := hw_rild.c
-LOCAL_MODULE := libshim_rild
-LOCAL_LDLIBS := -llog
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
     icu55.c \
     gui/SensorManager.cpp
