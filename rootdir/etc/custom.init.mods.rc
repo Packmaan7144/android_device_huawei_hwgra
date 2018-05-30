@@ -25,9 +25,6 @@ on init
 	#rite /dev/cpuset/system-background/mems 0
 	#write /dev/cpuset/top-app/cpus 0-7
 
-on early-boot
-    start HwCamCfgSvr hi3635 GRACE
-
 on enable-low-power
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
@@ -105,7 +102,6 @@ on property:sys.boot_completed=1
     write /sys/kernel/hmp/boost 0
     rm /data/hisi_logs/reboot_times.log
     trigger enable-low-power
-    restart media
 
 on property:init.svc.recovery=running
     trigger enable-low-power
