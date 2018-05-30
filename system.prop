@@ -126,7 +126,11 @@ ro.dual.sim.phone=true
 ro.config.hw_sim2airplane=false
 ro.config.show_sim_icon=true
 audioril.lib=libhuawei-audio-ril.so
-persist.radio.add_power_save=1
+#persist.radio.add_power_save=1
+ro.config.hw_fast_dormancy=1
+ro.telephony.call_ring.delay=0
+ring.delay=0
+ro.config.hw.security_volume=31
 
 ro.telephony.ril_class=HwHisiRIL
 
