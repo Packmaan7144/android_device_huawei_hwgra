@@ -83,7 +83,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libstlport \
 	libCameraHwExtend \
-	camera.hi3635 
+	camera.hi3635 \
+	libunwind-ptrace
 
 # Bluetooth config
 PRODUCT_COPY_FILES += \
