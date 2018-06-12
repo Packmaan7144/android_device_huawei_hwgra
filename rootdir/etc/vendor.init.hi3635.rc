@@ -33,7 +33,6 @@ on early-boot
     chown system system /sys/class/devfreq/gpufreq/polling_interval
     chmod 664 /sys/class/devfreq/gpufreq/polling_interval
     
-    
     chown system system /sys/class/devfreq/ddrfreq/max_freq
     chmod 664 /sys/class/devfreq/ddrfreq/max_freq
     chown system system /sys/class/devfreq/ddrfreq/min_freq
@@ -194,7 +193,7 @@ on charger
     start oeminfo_nvm
 
 on fs
-    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/vendor/lib/libwvm.so|libshim.so:/system/lib/libwvm.so|libshim.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/bin/|libshim_gps.so:/system/bin/glgps47531cl|libshim_gps.so:/system/bin/glgps4752|libshim_gps.so:/system/bin/glgps47531|libshim_gps.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so"
+    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/bin/|libshim_gps.so:/system/bin/glgps47531cl|libshim_gps.so:/system/bin/glgps4752|libshim_gps.so:/system/bin/glgps47531|libshim_gps.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so"
 
     export ANDROID_STORAGE ""
 
@@ -509,8 +508,9 @@ on boot
     write /sys/class/net/rmnet_ims/queues/rx-0/rps_flow_cnt 0
     write /sys/class/net/rmnet_ims/queues/rx-0/rps_cpus f
 
-    #RIL PERMISSIONS ADDED 2.4.2018
     chmod 0644 /proc/cmdline
+
+    setprop persist.camera.HAL3.enabled 1
 
 service charger_huawei /sbin/healthd -c
     class charger
