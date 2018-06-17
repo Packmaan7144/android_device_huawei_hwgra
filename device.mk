@@ -32,10 +32,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
 	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf
 
-# GPS libs
-#PRODUCT_COPY_FILES += \
-#	$(LOCAL_PATH)/vendor/system/lib64/hw/gps47531.default.so:system/lib64/hw/gps.hi3635.so
-
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
@@ -145,7 +141,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	hwcomposer.hi3635 \
 	lights.hi3635 \
-	#sensors.hi3635 \
 	power.hi3635 
 
 # AUDIO
@@ -247,7 +242,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.selinux=0 \
 	persist.sys.root_access=3
-	#ro.build.selinux=0 \
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.config.hw_perfhub=true \
@@ -265,16 +259,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
 
-PRODUCT_PACKAGES += \
-    com.hisi.perfhub
-
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
-
-# KEYPAD
-PRODUCT_PACKAGES += \
-	cyttsp5_mt.kl
 
 # DALVIK AND MEMORY
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
