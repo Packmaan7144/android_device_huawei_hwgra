@@ -14,7 +14,6 @@ on boot
 on property:sys.usb.config=none
     stop hw_cdma_service
     stop adbd
-    stop hdbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/devices/virtual/android_usb/android0/port_mode 1
@@ -49,7 +48,6 @@ on property:sys.usb.config=mtp,hdb
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/devices/virtual/android_usb/android0/port_mode 25
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,adb
@@ -72,7 +70,6 @@ on property:sys.usb.config=mtp,adb,hdb
     write /sys/devices/virtual/android_usb/android0/port_mode 26
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis
@@ -95,7 +92,6 @@ on property:sys.usb.config=rndis,hdb
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/devices/virtual/android_usb/android0/port_mode 27
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,adb
@@ -120,7 +116,6 @@ on property:sys.usb.config=rndis,adb,hdb
     write /sys/devices/virtual/android_usb/android0/port_mode 28
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,serial
@@ -173,7 +168,6 @@ on property:sys.usb.config=ptp,hdb
     write /sys/class/android_usb/android0/functions ptp,hdb,mass_storage
     write /sys/devices/virtual/android_usb/android0/port_mode 29
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp,adb
@@ -200,7 +194,6 @@ on property:sys.usb.config=ptp,adb,hdb
     write /sys/devices/virtual/android_usb/android0/port_mode 30
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=accessory
@@ -257,7 +250,6 @@ on property:sys.usb.config=mass_storage,hdb
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/devices/virtual/android_usb/android0/port_mode 31
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mass_storage,adb,hdb
@@ -271,7 +263,6 @@ on property:sys.usb.config=mass_storage,adb,hdb
     write /sys/devices/virtual/android_usb/android0/port_mode 32
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=hisuite,mtp,mass_storage
@@ -308,7 +299,6 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,hdb
     write /sys/class/android_usb/android0/functions mtp,hdb,mass_storage
     write /sys/devices/virtual/android_usb/android0/port_mode 33
     write /sys/class/android_usb/android0/enable 1
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=hisuite,mtp,mass_storage,adb,hdb
@@ -322,7 +312,6 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,adb,hdb
     write /sys/devices/virtual/android_usb/android0/port_mode 34
     write /sys/class/android_usb/android0/enable 1
     start adbd
-    start hdbd
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=audio_source
@@ -380,7 +369,6 @@ on property:sys.usb.config=manufacture,adb
     write /sys/class/android_usb/android0/enable 1
     stop hw_cdma_service
     start adbd
-    start hdbd
     start atcmdserver
     setprop sys.usb.state ${sys.usb.config}
 
@@ -397,7 +385,6 @@ on property:sys.usb.config=manufacture_sn,adb
     write /sys/class/android_usb/android0/enable 1
     stop hw_cdma_service
     start adbd
-    start hdbd
     start atcmdserver
     setprop sys.usb.state ${sys.usb.config}
 
@@ -446,13 +433,3 @@ on property:sys.usb.config=pcmodem2,adb
 
 on property:persist.sys.usb.config=*
     setprop sys.usb.config $persist.sys.usb.config
-
-service hdbd /sbin/hdbd --root_seclabel=u:r:su:s0
-    class core
-    socket hdbd stream 660 system system
-    disabled
-    seclabel u:r:hdbd:s0
-
-#service hw_ueventd /sbin/hw_ueventd
-#    class main
-#    user root
