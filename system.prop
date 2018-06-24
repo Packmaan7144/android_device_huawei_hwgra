@@ -208,3 +208,5 @@ ro.config.hw_video_beauty=true
 ro.config.small.previewpos=left
 ro.hwcamera.effectsdiscameraId=true
 ro.hwcamera.previeweffects=true
+
+persist.sys.stock_power_HAL=0
