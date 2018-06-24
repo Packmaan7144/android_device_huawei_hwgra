@@ -112,7 +112,7 @@ static power_profile_cpu profiles1[PROFILE_MAX] = {
         .io_is_busy = 1,
         .boostpulse_duration = 40000,
         .target_loads = "70:1209600:75:1401600:90:1612800:95",
-        .scaling_min_freq = 1209600,
+        .scaling_min_freq = 1017600,
         .scaling_max_freq = 2016000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
@@ -121,7 +121,7 @@ static power_profile_cpu profiles1[PROFILE_MAX] = {
         .io_is_busy = 1,
         .boostpulse_duration = 80000,
         .target_loads = "30:1209600:40:1401600:50:1612800:85",
-        .scaling_min_freq = 1209600,
+        .scaling_min_freq = 1017600,
         .scaling_max_freq = 2016000,
     },
 };
