@@ -118,8 +118,6 @@ PRODUCT_COPY_FILES += \
 # MEDIA
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/prebuilts/media_codecs_dts_audio.xml:system/etc/media_codecs_dts_audio.xml \
-    $(LOCAL_PATH)/prebuilts/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/prebuilts/media_profiles.xml:system/etc/media_profiles.xml
 
 #FM
