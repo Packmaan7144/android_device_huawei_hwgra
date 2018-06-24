@@ -101,7 +101,7 @@ on property:dev.bootcomplete=1
 
     write /sys/class/devfreq/ddrfreq/max_freq 800000000
     write /sys/class/devfreq/ddrfreq/min_freq 120000000
-    write /sys/class/devfreq/ddr/freq/governor pm_qos
+    write /sys/class/devfreq/ddrfreq/governor pm_qos
 
     write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 800000000
     write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 120000000
