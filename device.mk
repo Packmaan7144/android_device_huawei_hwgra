@@ -30,7 +30,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
 	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf \
 	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
-	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf
+	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf \
+	$(LOCAL_PATH)/prebuilts/libnfc-brcm.conf:system/etc/libnfc-brcm.conf 
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -45,11 +46,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/prebuilts/audio_policy.conf:system/etc/audio_policy.conf
-
-# FM RADIO quick hack to copy renamed files, does cm looks for default?
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilts/fm.bcm.hi3635.so:system/lib/hw/fm.bcm.default.so \
-	$(LOCAL_PATH)/prebuilts/fm.bcm.hi3635_64.so:system/lib64/hw/fm.bcm.default.so
 
 # CAMERA
 PRODUCT_PACKAGES += \
@@ -117,8 +113,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    $(LOCAL_PATH)/prebuilts/permissions/android.hardware.huawei.xml:system/etc/permissions/android.hardware.huawei.xml \
-    $(LOCAL_PATH)/prebuilts/permissions/com.hisi.perfhub.xml:system/etc/permissions/com.hisi.perfhub.xml 
+    $(LOCAL_PATH)/prebuilts/permissions/android.hardware.huawei.xml:system/etc/permissions/android.hardware.huawei.xml 
 
 # MEDIA
 PRODUCT_COPY_FILES += \
