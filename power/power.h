@@ -19,7 +19,7 @@
 #define STATE_ON "state=1"
 
 #define KERNEL_HMP_PATH "/sys/kernel/hmp/"
-#define DDRFREQ__PATH	"/sys/class/devfreq/ddrfreq"
+#define DDRFREQ__PATH	"/sys/class/devfreq/ddrfreq/"
 #define GPUFREQ_PATH "/sys/class/devfreq/gpufreq/"
 #define GPU_ONDEMAND_PATH	"/sys/class/devfreq/gpufreq/mali_ondemand"
 
@@ -28,9 +28,6 @@
 
 #define INTERACTIVE_PATH0 "/sys/devices/system/cpu/cpu0/cpufreq/interactive/"
 #define INTERACTIVE_PATH1 "/sys/devices/system/cpu/cpu4/cpufreq/interactive/"
-
-#define ONDEMAND_PATH0 "/sys/devices/system/cpu/cpu0/cpufreq/ondemand/"
-#define ONDEMAND_PATH1 "/sys/devices/system/cpu/cpu4/cpufreq/ondemand/"
 
 #define TAP_TO_WAKE_NODE "/sys/touchscreen/easy_wakeup_gesture"
 #define TAP_TO_WAKE_ENABLE "/sys/touchscreen/wakeup_gesture_enable"

@@ -127,22 +127,9 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
         sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                         profiles0[current_power_profile].scaling_max_freq);
 
-        sysfs_write_int(ONDEMAND_PATH1 "io_is_busy",
-                        profiles1[current_power_profile].io_is_busy);
-        sysfs_write_int(ONDEMAND_PATH1 "sampling_down_factor",
-                        profiles1[current_power_profile].sampling_down_factor);
-        sysfs_write_int(ONDEMAND_PATH1 "sampling_rate",
-                        profiles1[current_power_profile].sampling_rate);
-        sysfs_write_int(ONDEMAND_PATH1 "up_threshold",
-                        profiles1[current_power_profile].up_threshold);
-        sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
-                        profiles0[current_power_profile].scaling_min_freq);
-        sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
-                        profiles0[current_power_profile].scaling_max_freq);
-
-        sysfs_write_int(KERNEL_HMP_PATH "hmp_up",
+        sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                         profiles2[current_power_profile].hmp_up);
-        sysfs_write_int(KERNEL_HMP_PATH "hmp_down",
+        sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                         profiles2[current_power_profile].hmp_down);
         sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
                         profiles2[current_power_profile].hmp_prio);
@@ -180,22 +167,9 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[PROFILE_BALANCED].scaling_max_freq);
 
-      sysfs_write_int(ONDEMAND_PATH1 "io_is_busy",
-                      profiles1[PROFILE_BALANCED].io_is_busy);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_down_factor",
-                      profiles1[PROFILE_BALANCED].sampling_down_factor);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_rate",
-                      profiles1[PROFILE_BALANCED].sampling_rate);
-      sysfs_write_int(ONDEMAND_PATH1 "up_threshold",
-                      profiles1[PROFILE_BALANCED].up_threshold);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
-                      profiles0[PROFILE_BALANCED].scaling_min_freq);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
-                      profiles0[PROFILE_BALANCED].scaling_max_freq);
-
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_up",
+      sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[PROFILE_BALANCED].hmp_up);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_down",
+      sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[PROFILE_BALANCED].hmp_down);
       sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
                       profiles2[PROFILE_BALANCED].hmp_prio);
@@ -251,22 +225,9 @@ static void set_power_profile(int profile)
     sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                     profiles0[profile].scaling_max_freq);
 
-    sysfs_write_int(ONDEMAND_PATH1 "io_is_busy",
-                    profiles1[profile].io_is_busy);
-    sysfs_write_int(ONDEMAND_PATH1 "sampling_down_factor",
-                    profiles1[profile].sampling_down_factor);
-    sysfs_write_int(ONDEMAND_PATH1 "sampling_rate",
-                    profiles1[profile].sampling_rate);
-    sysfs_write_int(ONDEMAND_PATH1 "up_threshold",
-                    profiles1[profile].up_threshold);
-    sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
-                    profiles0[profile].scaling_min_freq);
-    sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
-                    profiles0[profile].scaling_max_freq);
-
-    sysfs_write_int(KERNEL_HMP_PATH "hmp_up",
+    sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                     profiles2[profile].hmp_up);
-    sysfs_write_int(KERNEL_HMP_PATH "hmp_down",
+    sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                     profiles2[profile].hmp_down);
     sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
                     profiles2[profile].hmp_prio);
@@ -315,22 +276,9 @@ static void power_hint_low_power(int on) {
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[PROFILE_POWER_SAVE].scaling_min_freq);
 
-      sysfs_write_int(ONDEMAND_PATH1 "io_is_busy",
-                      profiles1[PROFILE_POWER_SAVE].io_is_busy);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_down_factor",
-                      profiles1[PROFILE_POWER_SAVE].sampling_down_factor);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_rate",
-                      profiles1[PROFILE_POWER_SAVE].sampling_rate);
-      sysfs_write_int(ONDEMAND_PATH1 "up_threshold",
-                      profiles1[PROFILE_POWER_SAVE].up_threshold);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
-                      profiles0[PROFILE_POWER_SAVE].scaling_min_freq);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
-                      profiles0[PROFILE_POWER_SAVE].scaling_min_freq);
-
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_up",
+      sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[PROFILE_POWER_SAVE].hmp_up);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_down",
+      sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[PROFILE_POWER_SAVE].hmp_down);
       sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
                       profiles2[PROFILE_POWER_SAVE].hmp_prio);
@@ -366,22 +314,9 @@ static void power_hint_low_power(int on) {
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[current_power_profile].scaling_max_freq);
 
-      sysfs_write_int(ONDEMAND_PATH1 "io_is_busy",
-                      profiles1[current_power_profile].io_is_busy);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_down_factor",
-                      profiles1[current_power_profile].sampling_down_factor);
-      sysfs_write_int(ONDEMAND_PATH1 "sampling_rate",
-                      profiles1[current_power_profile].sampling_rate);
-      sysfs_write_int(ONDEMAND_PATH1 "up_threshold",
-                      profiles1[current_power_profile].up_threshold);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
-                      profiles0[current_power_profile].scaling_min_freq);
-      sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
-                      profiles0[current_power_profile].scaling_max_freq);
-
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_up",
+      sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[current_power_profile].hmp_up);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_down",
+      sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[current_power_profile].hmp_down);
       sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
                       profiles2[current_power_profile].hmp_prio);
