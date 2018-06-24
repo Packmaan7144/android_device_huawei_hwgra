@@ -25,7 +25,7 @@
 
 # gps
 /system/bin/gpsdaemon		u:object_r:gpsdaemon_exec:s0
-/system/bin/glgps47531		u:object_r:gpsd_exec:s0
+/system/bin/glgps47531		u:object_r:gps47531_exec:s0
 /system/bin/glgps47531cl	u:object_r:gpsd_exec:s0
 /system/bin/glgps4752		u:object_r:gpsd_exec:s0
 /system/bin/gps4752logd		u:object_r:gpslogd_exec:s0
