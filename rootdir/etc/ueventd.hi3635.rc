@@ -64,7 +64,7 @@
 /dev/dsm                  	0660  system    system
 /dev/hwtc		  			0660  system	system
 
-/dev/pn547                	0660  nfc       nfc
+/dev/pn547                	0660  nfc    	nfc
 
 /dev/act                  	0660  radio     radio
 
