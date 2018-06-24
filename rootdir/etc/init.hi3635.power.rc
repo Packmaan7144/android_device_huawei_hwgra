@@ -107,9 +107,9 @@ on property:dev.bootcomplete=1
     write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 120000000
     write /sys/class/devfreq/ddrfreq_up_threshold/governor pm_qos
 
-    write /sys/class/devfreq/gpufreq/max_freq 680000000
-    write /sys/class/devfreq/gpufreq/min_freq 288000000
-    write /sys/class/devfreq/gpufreq/governor pm_qos
+    write /sys/devices/e8600000.mali/devfreq/gpufreq/max_freq 680000000
+    write /sys/devices/e8600000.mali/devfreq/gpufreq/min_freq 288000000
+    write /sys/devices/e8600000.mali/devfreq/gpufreq/governor mali_ondemand
 
-    write /sys/devices/e8970000.mali/max_pool_max_size 131072
-    write /sys/devices/e8970000.mali/mem_pool_size 125560
+    write /sys/devices/e8600000.mali/max_pool_max_size 131072
+    write /sys/devices/e8600000.mali/mem_pool_size 125560
