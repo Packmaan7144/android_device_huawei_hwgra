@@ -133,6 +133,8 @@ on fs
     chown root system /splash2
     chmod 0775 /splash2
 
+    chown wifi wifi /data/misc/wifi/hostapd.conf
+
     restorecon /sys/class/leds/red/brightness
     restorecon /sys/class/leds/green/brightness
     restorecon /sys/class/leds/blue/brightness
