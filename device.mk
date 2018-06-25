@@ -39,8 +39,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml \
-    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml \
-    $(LOCAL_PATH)/prebuilts/gps4752.conf:system/etc/gps4752.conf
+    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml 
 
 # AUDIO CONFIG
 PRODUCT_COPY_FILES += \
@@ -118,6 +117,7 @@ PRODUCT_COPY_FILES += \
 # MEDIA
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/prebuilts/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/prebuilts/media_profiles.xml:system/etc/media_profiles.xml
 
 #FM
