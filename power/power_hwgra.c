@@ -131,7 +131,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles2[current_power_profile].hmp_up);
         sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                         profiles2[current_power_profile].hmp_down);
-        sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
+        sysfs_write_int(KERNEL_HMP_PATH "up_prio",
                         profiles2[current_power_profile].hmp_prio);
 
         sysfs_write_int(DDRFREQ__PATH "min_freq",
@@ -171,7 +171,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                       profiles2[PROFILE_BALANCED].hmp_up);
       sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[PROFILE_BALANCED].hmp_down);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
+      sysfs_write_int(KERNEL_HMP_PATH "up_prio",
                       profiles2[PROFILE_BALANCED].hmp_prio);
 
       sysfs_write_int(DDRFREQ__PATH "min_freq",
@@ -229,7 +229,7 @@ static void set_power_profile(int profile)
                     profiles2[profile].hmp_up);
     sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                     profiles2[profile].hmp_down);
-    sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
+    sysfs_write_int(KERNEL_HMP_PATH "up_prio",
                     profiles2[profile].hmp_prio);
 
     sysfs_write_int(DDRFREQ__PATH "min_freq",
@@ -280,7 +280,7 @@ static void power_hint_low_power(int on) {
                       profiles2[PROFILE_POWER_SAVE].hmp_up);
       sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[PROFILE_POWER_SAVE].hmp_down);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
+      sysfs_write_int(KERNEL_HMP_PATH "up_prio",
                       profiles2[PROFILE_POWER_SAVE].hmp_prio);
 
       sysfs_write_int(DDRFREQ__PATH "min_freq",
@@ -318,7 +318,7 @@ static void power_hint_low_power(int on) {
                       profiles2[current_power_profile].hmp_up);
       sysfs_write_int(KERNEL_HMP_PATH "down_threshold",
                       profiles2[current_power_profile].hmp_down);
-      sysfs_write_int(KERNEL_HMP_PATH "hmp_prio",
+      sysfs_write_int(KERNEL_HMP_PATH "up_prio",
                       profiles2[current_power_profile].hmp_prio);
 
       sysfs_write_int(DDRFREQ__PATH "min_freq",
