@@ -19,9 +19,9 @@
 #define STATE_ON "state=1"
 
 #define KERNEL_HMP_PATH "/sys/kernel/hmp/"
-#define DDRFREQ__PATH "/sys/devices/ddrfreq/devfreq/ddrfreq"
-#define GPUFREQ_PATH "/sys/class/devfreq/gpufreq/"
-#define GPU_ONDEMAND_PATH "/sys/class/devfreq/gpufreq/mali_ondemand"
+#define DDRFREQ__PATH "/sys/devices/ddrfreq/devfreq/ddrfreq/"
+#define GPUFREQ_PATH "/sys/devices/e8600000.mali/devfreq/gpufreq/"
+#define GPU_ONDEMAND_PATH "/sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/"
 
 #define CPUFREQ_PATH0 "/sys/devices/system/cpu/cpu0/cpufreq/"
 #define CPUFREQ_PATH1 "/sys/devices/system/cpu/cpu4/cpufreq/"
