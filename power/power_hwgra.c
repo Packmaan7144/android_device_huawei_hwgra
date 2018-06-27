@@ -126,6 +126,12 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles0[current_power_profile].scaling_min_freq);
         sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                         profiles0[current_power_profile].scaling_max_freq);
+        sysfs_write_str(INTERACTIVE_PATH0 "timer_rate",
+                        profiles0[current_power_profile].timer_rate);
+        sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
+                        profiles0[current_power_profile].timer_slack);
+        sysfs_write_int(INTERACTIVE_PATH0 "min_sample_time",
+                        profiles0[current_power_profile].min_sample_time);
 
         sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                         profiles2[current_power_profile].hmp_up);
@@ -166,6 +172,12 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                       profiles0[PROFILE_BALANCED].scaling_min_freq);
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[PROFILE_BALANCED].scaling_max_freq);
+      sysfs_write_str(INTERACTIVE_PATH0 "timer_rate",
+                      profiles0[PROFILE_BALANCED].timer_rate);
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
+                      profiles0[PROFILE_BALANCED].timer_slack);
+      sysfs_write_int(INTERACTIVE_PATH0 "min_sample_time",
+                      profiles0[PROFILE_BALANCED].min_sample_time);
 
       sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[PROFILE_BALANCED].hmp_up);
@@ -224,6 +236,12 @@ static void set_power_profile(int profile)
                     profiles0[profile].scaling_min_freq);
     sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                     profiles0[profile].scaling_max_freq);
+    sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
+                  profiles0[profile].timer_rate);
+    sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
+                    profiles0[profile].timer_slack);
+    sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+                    profiles0[profile].min_sample_time);
 
     sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                     profiles2[profile].hmp_up);
@@ -275,6 +293,12 @@ static void power_hint_low_power(int on) {
                       profiles0[PROFILE_POWER_SAVE].scaling_min_freq);
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[PROFILE_POWER_SAVE].scaling_min_freq);
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
+                      profiles0[PROFILE_POWER_SAVE].timer_rate);
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
+                      profiles0[PROFILE_POWER_SAVE].timer_slack);
+      sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+                      profiles0[PROFILE_POWER_SAVE].min_sample_time);
 
       sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[PROFILE_POWER_SAVE].hmp_up);
@@ -313,6 +337,12 @@ static void power_hint_low_power(int on) {
                       profiles0[current_power_profile].scaling_min_freq);
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[current_power_profile].scaling_max_freq);
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
+                      profiles0[current_power_profile].timer_rate);
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
+                      profiles0[current_power_profile].timer_slack);
+      sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+                      profiles0[current_power_profile].min_sample_time);
 
       sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
                       profiles2[current_power_profile].hmp_up);
@@ -475,7 +505,7 @@ struct power_module HAL_MODULE_INFO_SYM = {
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = POWER_HARDWARE_MODULE_ID,
         .name = "HI3635 Power HAL",
-        .author = "Surdu Petru, Andrea Dieni",
+        .author = "Surdu Petru, Andrea Dieni, T1mpp4, Eray Rafet",
         .methods = &power_module_methods,
     },
 
