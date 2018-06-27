@@ -50,6 +50,9 @@ typedef struct interactive_governor_settings {
     char *target_loads;
     int scaling_min_freq;
     int scaling_max_freq;
+    int timer_rate;
+    int timer_slack;
+    int min_sample_time;
 } power_profile_cpu;
 
 typedef struct other_settings {
@@ -70,11 +73,14 @@ static power_profile_cpu profiles0[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
         .go_hispeed_load = 60,
         .hispeed_freq = 1017600,
-        .io_is_busy = 0,
+        .io_is_busy = 1,
         .boostpulse_duration = 40000,
         .target_loads = "80",
         .scaling_min_freq = 403200,
         .scaling_max_freq = 1017600,
+        .timer_rate = 30000,
+        .timer_slack = 40000,
+        .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
         .go_hispeed_load = 60,
@@ -84,15 +90,21 @@ static power_profile_cpu profiles0[PROFILE_MAX] = {
         .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70,
         .scaling_min_freq = 403200,
         .scaling_max_freq = 1516800,
+        .timer_rate = 30000,
+        .timer_slack = 40000,
+        .min_sample_time = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
-        .go_hispeed_load = 95,
-        .hispeed_freq = 1516800,
+        .go_hispeed_load = 60,
+        .hispeed_freq = 1209600,
         .io_is_busy = 1,
         .boostpulse_duration = 80000,
-        .target_loads = "30:604800:40:806400:50:1209600:85",
+        .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70",
         .scaling_min_freq = 403200,
         .scaling_max_freq = 1516800,
+        .timer_rate = 30000,
+        .timer_slack = 40000,
+        .min_sample_time = 300000,
     },
 };
 
@@ -105,6 +117,9 @@ static power_profile_cpu profiles1[PROFILE_MAX] = {
         .target_loads = "80",
         .scaling_min_freq = 1017600,
         .scaling_max_freq = 1209600,
+        .timer_rate = 40000,
+        .timer_slack = 50000,
+        .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
         .go_hispeed_load = 60
@@ -114,15 +129,21 @@ static power_profile_cpu profiles1[PROFILE_MAX] = {
         .target_loads = "75",
         .scaling_min_freq = 1017600,
         .scaling_max_freq = 2016000,
+        .timer_rate = 40000,
+        .timer_slack = 50000,
+        .min_sample_time = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
-        .go_hispeed_load = 95,
-    	.hispeed_freq = 1804800,
+        .go_hispeed_load = 60,
+    	.hispeed_freq = 1612800,
         .io_is_busy = 1,
         .boostpulse_duration = 80000,
-        .target_loads = "30:1209600:40:1401600:50:1612800:85",
+        .target_loads = "70",
         .scaling_min_freq = 1017600,
         .scaling_max_freq = 2016000,
+        .timer_rate = 40000,
+        .timer_slack = 50000,
+        .min_sample_time = 300000,
     },
 };
 
