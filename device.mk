@@ -31,7 +31,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf \
 	$(LOCAL_PATH)/prebuilts/libnfc-nxp_grace.conf:system/etc/libnfc-nxp.conf \
 	$(LOCAL_PATH)/prebuilts/libnfc-brcm_grace.conf:system/etc/libnfc-brcm_grace.conf \
-	$(LOCAL_PATH)/prebuilts/libnfc-brcm.conf:system/etc/libnfc-brcm.conf 
+	$(LOCAL_PATH)/prebuilts/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/prebuilts/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -39,7 +40,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml \
-    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml 
+    $(LOCAL_PATH)/prebuilts/gps47531config_cl.xml:system/etc/gps47531config_cl.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config_cl_beta.xml:system/etc/gps47531config_cl_beta.xml \
+    $(LOCAL_PATH)/prebuilts/gps47531config.xml:system/etc/gps47531config.xml
 
 # AUDIO CONFIG
 PRODUCT_COPY_FILES += \
@@ -69,13 +72,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	dlopen32 \
 	dlopen64
-
-# Fix camera
-PRODUCT_PACKAGES += \
-	libstlport \
-	libCameraHwExtend \
-	camera.hi3635 \
-	libunwind-ptrace
 
 # Bluetooth config
 PRODUCT_COPY_FILES += \
@@ -174,17 +170,26 @@ PRODUCT_PACKAGES += \
 	nqnfcee_access.xml \
 	nqnfcse_access.xml \
     NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
 	Tag
 
 # WIFI
 PRODUCT_PACKAGES += \
 	libwpa_client \
 	wpa_supplicant \
+    wpa_supplicant.conf \
 	hostapd \
 	wificond \
-	wifilogd
+	wifilogd \
+    dhcpcd.conf \
+    libandroid_runtime
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/prebuilts/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf    
+
+# GPS
+PRODUCT_PACKAGES += \
+    libtinyxml
 
 # RAMDISK
 PRODUCT_PACKAGES += \

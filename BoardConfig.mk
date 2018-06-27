@@ -120,6 +120,7 @@ WIFI_DRIVER_MODULE_P2P := "firmware_path=system/vendor/firmware/fw_bcm4334_apsta
 WIFI_DRIVER_MODULE_AP_ARG := "firmware_path=system/vendor/firmware/fw_bcm4334_apsta_hw.bin nvram_path=system/vendor/firmware/nvram4334_hw_fifa_ul.txt ifname=wlan0"
 BOARD_LEGACY_NL80211_STA_EVENTS := true
 BOARD_NO_APSME_ATTR := true
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/vnd_hwgra.conf
