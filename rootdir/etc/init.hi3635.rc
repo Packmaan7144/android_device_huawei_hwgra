@@ -146,7 +146,6 @@ on fs
     restorecon /sys/class/leds/red/brightness
     restorecon /sys/class/leds/green/brightness
     restorecon /sys/class/leds/blue/brightness
-    restorecon /sys/class/leds/torch_front/brightness
     restorecon /sys/class/leds/torch/brightness
     restorecon /sys/class/hw_power/charger/charge_data/enable_charger
     restorecon /sys/class/leds/lcd_backlight0/brightness
@@ -173,13 +172,15 @@ on fs
     restorecon /sys/class/hw_power/charger/charge_data/ichg_thermal
     restorecon /sys/devices/amba.12/f7101000.i2c/i2c-1/1-001c/command
     restorecon /sys/devices/amba.13/f7101000.i2c/i2c-1/1-001c/command
-    restorecon /sys/devices/f8000000.hisi_led/leds/blue/brightness
-    restorecon /sys/devices/f8000000.hisi_led/leds/red/brightness
-    restorecon /sys/devices/f8000000.hisi_led/leds/green/brightness
-    restorecon /sys/devices/platform/balong_fb.1/leds/lcd_backlight0/brightness
-    restorecon /sys/devices/virtual/leds/torch/brightness
+    restorecon /sys/devices/fff34000.hisi_led/leds/blue/brightness
+    restorecon /sys/devices/fff34000.hisi_led/leds/red/brightness
+    restorecon /sys/devices/fff34000.hisi_led/leds/green/brightness
+    restorecon /sys/devices/platform/hisi_fb.1048577/leds/lcd_backlight0/brightness
     restorecon /sys/class/graphics/fb0/lcd_cabc_mode
     restorecon /sys/class/leds/torch/flash_thermal_protect
+    restorecon /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost
+    restorecon /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost_freq
+    restorecon /sys/devices/ddrfreq/devfreq/ddrfreq/polling_interval
 
     chown radio radio sys/devices/platform/balong_power/state
 
