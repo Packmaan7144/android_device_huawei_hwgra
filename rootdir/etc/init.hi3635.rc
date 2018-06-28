@@ -88,6 +88,14 @@ on init
     chown system system /sys/class/devfreq/ddrfreq_up_threshold/polling_interval
     chmod 664 /sys/class/devfreq/ddrfreq_up_threshold/polling_interval
 
+
+    chown system system /sys/kernel/hmp/up_threshold
+    chmod 664 /sys/kernel/hmp/up_threshold
+    chown system system /sys/kernel/hmp/down_threshold
+    chmod 664 /sys/kernel/hmp/down_threshold
+    chown system system /sys/kernel/hmp/up_prio
+    chmod 664 /sys/kernel/hmp/up_prio
+
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
@@ -229,11 +237,14 @@ on post-fs-data
     mkdir /data/nvram/md_via 0770 root nvram
     mkdir /data/pppd_via 0770 radio system
 
-    mkdir /data/gps 775 system system
-    mkdir /data/log/gps_log 775 gps system
-    mkdir /data/log/gps_log/.tmp 775 gps system
-    mkdir /data/log/gps_log/gps 775 gps system
-    mkdir /data/log/gps_log/lhd 775 gps system
+    mkdir /data/gps 775 root system
+    mkdir /data/log/gps_log 775 root system
+    mkdir /data/log/gps_log/.tmp 775 root system
+    mkdir /data/log/gps_log/gps 775 root system
+    mkdir /data/log/gps_log/lhd 775 root system
+
+    chmod 775 /data/gps/gpsconfig.xml
+    chown root root /data/gps/gpsconfig.xml
 
 
     mkdir /data/misc/wifi 0770 wifi wifi
