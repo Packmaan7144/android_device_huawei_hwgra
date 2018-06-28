@@ -5,21 +5,21 @@
 /system/bin/tui_daemon				u:object_r:tui_daemon_exec:s0
 /system/bin/vr_daemon				u:object_r:vr_daemon_exec:s0
 
-/vendor/bin/atcmdserver				u:object_r:atcmdserver_exec:s0
-/vendor/bin/bastetd					u:object_r:bastetd_exec:s0
-/vendor/bin/data_cleaner			u:object_r:data_cleaner_exec:s0
-/vendor/bin/diagserver				u:object_r:diagserver_exec:s0
-/vendor/bin/hiscoutmanager			u:object_r:hiscoutmanager_exec:s0
-/vendor/bin/hivwserver				u:object_r:hivwserver_exec:s0
-/vendor/bin/HwCamCfgSvr				u:object_r:hwcamcfgsvr_exec:s0
-/vendor/bin/hwnff					u:object_r:hwnffserver_exec:s0
-/vendor/bin/hwnffserver				u:object_r:hwnffserver_exec:s0
-/vendor/bin/lhd4774					u:object_r:gpsd_exec:s0
-/vendor/bin/limit_current			u:object_r:limit_current_exec:s0
-/vendor/bin/mac_addr_normalization	u:object_r:mac_addr_normalization_exec:s0
-/vendor/bin/perfhub					u:object_r:perfhub_exec:s0
-/vendor/bin/secure_storage			u:object_r:secure_storage_exec:s0
-/vendor/bin/thermal-daemon          u:object_r:thermal-daemon_exec:s0
+/system/bin/atcmdserver				u:object_r:atcmdserver_exec:s0
+/system/bin/bastetd					u:object_r:bastetd_exec:s0
+/system/bin/data_cleaner			u:object_r:data_cleaner_exec:s0
+/system/bin/diagserver				u:object_r:diagserver_exec:s0
+/system/bin/hiscoutmanager			u:object_r:hiscoutmanager_exec:s0
+/system/bin/hivwserver				u:object_r:hivwserver_exec:s0
+/system/bin/HwCamCfgSvr				u:object_r:hwcamcfgsvr_exec:s0
+/system/bin/hwnff					u:object_r:hwnffserver_exec:s0
+/system/bin/hwnffserver				u:object_r:hwnffserver_exec:s0
+/system/bin/lhd4774					u:object_r:gpsd_exec:s0
+/system/bin/limit_current			u:object_r:limit_current_exec:s0
+/system/bin/mac_addr_normalization	u:object_r:mac_addr_normalization_exec:s0
+/system/bin/perfhub					u:object_r:perfhub_exec:s0
+/system/bin/secure_storage			u:object_r:secure_storage_exec:s0
+/system/bin/thermal-daemon          u:object_r:thermal-daemon_exec:s0
 
 /system/bin/HwCamCfgSvr				u:object_r:hwcamcfgsvr_exec:s0
 
