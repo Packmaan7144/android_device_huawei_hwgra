@@ -21,6 +21,8 @@
 /vendor/bin/secure_storage			u:object_r:secure_storage_exec:s0
 /vendor/bin/thermal-daemon          u:object_r:thermal-daemon_exec:s0
 
+/system/bin/HwCamCfgSvr				u:object_r:hwcamcfgsvr_exec:s0
+
 /system/etc/native_packages.xml		u:object_r:teecd_data_file:s0
 
 # gps
