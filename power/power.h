@@ -71,9 +71,9 @@ typedef struct other_settings {
 
 static power_profile_cpu profiles0[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
-        .go_hispeed_load = 60,
-        .hispeed_freq = 1017600,
-        .io_is_busy = 1,
+        .go_hispeed_load = 99,
+        .hispeed_freq = 806400,
+        .io_is_busy = 0,
         .boostpulse_duration = 40000,
         .target_loads = "80",
         .scaling_min_freq = 403200,
@@ -83,11 +83,11 @@ static power_profile_cpu profiles0[PROFILE_MAX] = {
         .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
-        .go_hispeed_load = 60,
+        .go_hispeed_load = 80,
         .hispeed_freq = 1017600,
         .io_is_busy = 1,
         .boostpulse_duration = 40000,
-        .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70,
+        .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70",
         .scaling_min_freq = 403200,
         .scaling_max_freq = 1516800,
         .timer_rate = 30000,
@@ -110,9 +110,9 @@ static power_profile_cpu profiles0[PROFILE_MAX] = {
 
 static power_profile_cpu profiles1[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
-    	.go_hispeed_load = 60,
+    	.go_hispeed_load = 99,
     	.hispeed_freq = 1209600,
-        .io_is_busy = 1,
+        .io_is_busy = 0,
         .boostpulse_duration = 40000,
         .target_loads = "80",
         .scaling_min_freq = 1017600,
@@ -122,8 +122,8 @@ static power_profile_cpu profiles1[PROFILE_MAX] = {
         .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
-        .go_hispeed_load = 60
-    	.hispeed_freq = 1401600
+        .go_hispeed_load = 80,
+    	.hispeed_freq = 1401600,
         .io_is_busy = 1,
         .boostpulse_duration = 40000,
         .target_loads = "75",
@@ -172,7 +172,7 @@ static power_profile_other profiles2[PROFILE_MAX] = {
         .gpu_min_freq = 288000000,
         .gpu_polling_interval = 40,
         .animation_boost = 1,
-        .animation_boost_freq = 60000000,
+        .animation_boost_freq = 600000000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
         .hmp_up = 500,

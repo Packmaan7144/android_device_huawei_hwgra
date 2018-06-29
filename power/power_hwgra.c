@@ -126,7 +126,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles0[current_power_profile].scaling_min_freq);
         sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                         profiles0[current_power_profile].scaling_max_freq);
-        sysfs_write_str(INTERACTIVE_PATH0 "timer_rate",
+        sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
                         profiles0[current_power_profile].timer_rate);
         sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
                         profiles0[current_power_profile].timer_slack);
@@ -147,7 +147,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles1[current_power_profile].scaling_min_freq);
         sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
                         profiles1[current_power_profile].scaling_max_freq);
-        sysfs_write_str(INTERACTIVE_PATH1 "timer_rate",
+        sysfs_write_int(INTERACTIVE_PATH1 "timer_rate",
                         profiles1[current_power_profile].timer_rate);
         sysfs_write_int(INTERACTIVE_PATH1 "timer_slack",
                         profiles1[current_power_profile].timer_slack);
@@ -193,7 +193,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                       profiles0[PROFILE_BALANCED].scaling_min_freq);
       sysfs_write_int(CPUFREQ_PATH0 "scaling_max_freq",
                       profiles0[PROFILE_BALANCED].scaling_max_freq);
-      sysfs_write_str(INTERACTIVE_PATH0 "timer_rate",
+      sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
                       profiles0[PROFILE_BALANCED].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
                       profiles0[PROFILE_BALANCED].timer_slack);
@@ -214,7 +214,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                       profiles1[PROFILE_BALANCED].scaling_min_freq);
       sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
                       profiles1[PROFILE_BALANCED].scaling_max_freq);
-      sysfs_write_str(INTERACTIVE_PATH1 "timer_rate",
+      sysfs_write_int(INTERACTIVE_PATH1 "timer_rate",
                       profiles1[PROFILE_BALANCED].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH1 "timer_slack",
                       profiles1[PROFILE_BALANCED].timer_slack);
@@ -282,7 +282,7 @@ static void set_power_profile(int profile)
                   profiles0[profile].timer_rate);
     sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
                     profiles0[profile].timer_slack);
-    sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+    sysfs_write_int(INTERACTIVE_PATH0 "min_sample_time",
                     profiles0[profile].min_sample_time);
 
     sysfs_write_int(INTERACTIVE_PATH1 "go_hispeed_load",
@@ -303,7 +303,7 @@ static void set_power_profile(int profile)
                     profiles1[profile].timer_rate);
     sysfs_write_int(INTERACTIVE_PATH1 "timer_slack",
                     profiles1[profile].timer_slack);
-    sysfs_write_str(INTERACTIVE_PATH1 "min_sample_time",
+    sysfs_write_int(INTERACTIVE_PATH1 "min_sample_time",
                     profiles1[profile].min_sample_time);
 
     sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
@@ -360,7 +360,7 @@ static void power_hint_low_power(int on) {
                       profiles0[PROFILE_POWER_SAVE].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
                       profiles0[PROFILE_POWER_SAVE].timer_slack);
-      sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+      sysfs_write_int(INTERACTIVE_PATH0 "min_sample_time",
                       profiles0[PROFILE_POWER_SAVE].min_sample_time);
 
       sysfs_write_int(INTERACTIVE_PATH1 "go_hispeed_load",
@@ -381,7 +381,7 @@ static void power_hint_low_power(int on) {
                       profiles1[PROFILE_POWER_SAVE].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH1 "timer_slack",
                       profiles1[PROFILE_POWER_SAVE].timer_slack);
-      sysfs_write_str(INTERACTIVE_PATH1 "min_sample_time",
+      sysfs_write_int(INTERACTIVE_PATH1 "min_sample_time",
                       profiles1[PROFILE_POWER_SAVE].min_sample_time);	    
 
       sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
@@ -425,7 +425,7 @@ static void power_hint_low_power(int on) {
                       profiles0[current_power_profile].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
                       profiles0[current_power_profile].timer_slack);
-      sysfs_write_str(INTERACTIVE_PATH0 "min_sample_time",
+      sysfs_write_int(INTERACTIVE_PATH0 "min_sample_time",
                       profiles0[current_power_profile].min_sample_time);
 
       sysfs_write_int(INTERACTIVE_PATH1 "go_hispeed_load",
@@ -446,7 +446,7 @@ static void power_hint_low_power(int on) {
                       profiles1[current_power_profile].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH1 "timer_slack",
                       profiles1[current_power_profile].timer_slack);
-      sysfs_write_str(INTERACTIVE_PATH1 "min_sample_time",
+      sysfs_write_int(INTERACTIVE_PATH1 "min_sample_time",
                       profiles1[current_power_profile].min_sample_time);
 
       sysfs_write_int(KERNEL_HMP_PATH "up_threshold",
