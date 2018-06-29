@@ -856,7 +856,7 @@ on boot
     
     write /splash2/sim/sim_pin_file.bin  "000000"
 
-    write /sys/block/zram0/disksize 268435456
+    #write /sys/block/zram0/disksize 268435456
     swapon_all fstab.hi3635
 
     setprop persist.camera.HAL3.enabled 1
