@@ -37,6 +37,8 @@ on enable-low-power
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
     chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
@@ -64,6 +66,8 @@ on enable-low-power
     chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
     chown system system /sys/devices/ddrfreq/devfreq/ddrfreq/polling_interval
     chmod 0664 /sys/devices/ddrfreq/devfreq/ddrfreq/polling_interval
     chown system system /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost
@@ -111,13 +115,13 @@ on property:dev.bootcomplete=1
     write /sys/class/devfreq/ddrfreq/min_freq 120000000
     write /sys/class/devfreq/ddrfreq/governor pm_qos
 
-    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold 800000000
-    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold 120000000
-    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold pm_qos
+    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold/max_freq 800000000
+    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold/min_freq 120000000
+    write /sys/devices/ddrfreq_up_threshold/devfreq/ddrfreq_up_threshold/governor pm_qos
 
     write /sys/devices/e8600000.mali/devfreq/gpufreq/max_freq 680000000
     write /sys/devices/e8600000.mali/devfreq/gpufreq/min_freq 288000000
     write /sys/devices/e8600000.mali/devfreq/gpufreq/governor mali_ondemand
 
-    write /sys/devices/e8600000.mali/max_pool_max_size 131072
+    write /sys/devices/e8600000.mali/mem_pool_max_size 131072
     write /sys/devices/e8600000.mali/mem_pool_size 125560
