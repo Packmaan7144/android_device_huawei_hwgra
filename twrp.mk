@@ -22,7 +22,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 #in vendor recovery it is RGB565
 #TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"  
 #TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888" 
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/recovery.fstab 
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi3635
 #this is required to avoid unresponsive touch at boot until screen timeout 
 TW_SCREEN_BLANK_ON_BOOT := true 
 RECOVERY_SDCARD_ON_DATA := true

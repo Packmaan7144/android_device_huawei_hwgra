@@ -70,6 +70,8 @@ on enable-low-power
     chmod 0664 /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost
     chown system system /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost_freq
     chmod 0664 /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
 
     # bring all CPUs online
     write /sys/devices/system/cpu/cpu0/online 1

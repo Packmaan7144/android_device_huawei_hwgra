@@ -23,7 +23,6 @@
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
 #include <binder/IMemory.h>
-#include <stdint.h>
 
 #include <camera/Camera.h>
 #include <camera/ICameraRecordingProxyListener.h>
@@ -375,5 +374,3 @@ Camera::RecordingProxy::RecordingProxy(const sp<Camera>& camera)
 }
 
 }; // namespace android
-
-void _ZN7android8hardware14ICameraService10descriptorE() {}

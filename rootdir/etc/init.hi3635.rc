@@ -116,7 +116,7 @@ on early-fs
 
 
 on fs
-    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so:/system/bin/glgps47531|libshim_icu.so"
+    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so:/system/bin/glgps47531|libshim_icu.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_camera.so:/system/lib/libcamera_algo.so|libshim_camera.so:/system/lib64/libcamera_algo.so|libshim_camera.so"
 
     mount_all /fstab.hi3635
 
@@ -147,6 +147,9 @@ on fs
     restorecon /sys/class/leds/green/brightness
     restorecon /sys/class/leds/blue/brightness
     restorecon /sys/class/leds/torch/brightness
+    restorecon /sys/class/leds/blue/trigger
+    restorecon /sys/class/leds/green/trigger
+    restorecon /sys/class/leds/red/trigger
     restorecon /sys/class/hw_power/charger/charge_data/enable_charger
     restorecon /sys/class/leds/lcd_backlight0/brightness
     restorecon /sys/class/graphics/fb0/lcd_test_config
@@ -178,9 +181,6 @@ on fs
     restorecon /sys/devices/platform/hisi_fb.1048577/leds/lcd_backlight0/brightness
     restorecon /sys/class/graphics/fb0/lcd_cabc_mode
     restorecon /sys/class/leds/torch/flash_thermal_protect
-    restorecon /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost
-    restorecon /sys/devices/e8600000.mali/devfreq/gpufreq/mali_ondemand/animation_boost_freq
-    restorecon /sys/devices/ddrfreq/devfreq/ddrfreq/polling_interval
 
     chown radio radio sys/devices/platform/balong_power/state
 
@@ -540,6 +540,9 @@ on boot
     chown system system /sys/class/leds/blue/brightness
     chown system system /sys/class/leds/blue/delay_off
     chown system system /sys/class/leds/blue/delay_on
+    chown system system /sys/class/leds/red/trigger
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/blue/trigger
     chown system system /sys/class/timed_output/vibrator/vibrator_dbc_test
     chown system system /sys/class/timed_output/vibrator/vibrator_calib
     chown system system /sys/class/timed_output/vibrator/vibrator_get_reg
@@ -787,6 +790,8 @@ on boot
     chown system system /sys/class/sensors/airpress_sensor/get_data
     chown system system /sys/class/sensors/airpress_sensor/read_airpress
     chown system system /sys/class/sensors/airpress_sensor/set_calidata
+    chown system system /sys/class/sensors/libsensor_ver
+    chown system system /sys/class/sensors/mag_sensor/calibrate_method
 
     chown system system /sys/class/hall/hall/state
     chown system system /sys/class/hall/hall/report

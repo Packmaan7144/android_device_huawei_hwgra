@@ -62,7 +62,8 @@ PRODUCT_PACKAGES += \
     libshim_log \
     libshim_algo \
     libshim_hwui \
-    libshim_gpsd
+    libshim_gpsd \
+
 
 # GPS
 PRODUCT_PACKAGES += \
