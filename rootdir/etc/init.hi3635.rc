@@ -88,6 +88,25 @@ on init
     chown system system /sys/class/devfreq/ddrfreq_up_threshold/polling_interval
     chmod 664 /sys/class/devfreq/ddrfreq_up_threshold/polling_interval
 
+    chown system system /sys/devices/virtual/thermal/thermal_zone0/boost
+    chmod 664 /sys/devices/virtual/thermal/thermal_zone0/boost
+    chown system system /sys/devices/virtual/thermal/thermal_zone0/boost_timeout
+    chmod 664 /sys/devices/virtual/thermal/thermal_zone0/boost_timeout
+    chown system system /sys/class/thermal/thermal_zone0/mode
+    chmod 0664 /sys/class/thermal/thermal_zone0/mode
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chmod 0664 /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chmod 0664 /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone0/sustainable_power
+    chmod 0664 /sys/class/thermal/thermal_zone0/sustainable_power
+    chown system system /sys/class/thermal/thermal_zone1/mode
+    chmod 0664 /sys/class/thermal/thermal_zone1/mode
+    chown system system /sys/class/camerafs/node/thermal_meter0
+    chown system system /sys/class/camerafs/node/thermal_meter1
+    chown system system /sys/class/camerafs/node/thermal_meter2
+
+
 
     chown system system /sys/kernel/hmp/up_threshold
     chmod 664 /sys/kernel/hmp/up_threshold
@@ -116,7 +135,7 @@ on early-fs
 
 
 on fs
-    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so:/system/bin/glgps47531|libshim_icu.so:/system/lib/hw/camera.hi3635.so|libshim_camera.so:/system/lib64/hw/camera.hi3635.so|libshim_camera.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_camera.so:/system/lib/libcamera_algo.so|libshim_camera.so:/system/lib64/libcamera_algo.so|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/bin/recovery-persist|/system/lib64/libhw_log.so:/system/bin/recovery-refresh|/system/lib64/libhw_log.so:/system/bin/rild|/system/lib64/libshim_icu.so:/system/lib/libril.so|/system/lib/libshim_icu.so:/system/lib64/libril.so|/system/lib64/libshim_icu.so:/system/lib/hw/audio.primary.hi3635.so|/system/lib/libshim_icu.so:/system/lib64/hw/audio.primary.hi3635.so|/system/lib64/libshim_icu.so:/system/lib/libhwuibp.so|/system/lib/libshim_hwui.so:/system/lib64/libhwuibp.so|/system/lib64/libshim_hwui.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libsensorsgps.so|libshim_gui.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libstagefright_soft_ffmpegvideodec.so|/system/lib/libshim_libstagefright.so:/system/lib64/libstagefright_soft_ffmpegvideodec.so|/system/lib64/libshim_libstagefright.so:/system/lib64/libsensorservice.so|libhw_log.so:/system/lib64/hw/sensorhub.default.so|libhw_log.so:/system/lib/hwcam/hwcam.hi3635.m.GRACE.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim_hwui.so:/system/lib/libcamera_algo.so|libshim.so:/system/bin/glgps47531|libshim_icu.so"
 
     mount_all /fstab.hi3635
 
@@ -294,13 +313,16 @@ on post-fs-data
 
     mkdir /data/media 0770 media_rw media_rw
 
-    mkdir /data/camera 0770 system camera
-    write  data/camera/hisi_sensor0  0
-    write  data/camera/hisi_sensor1  0
-    chown media audio /data/camera/hisi_sensor0
-    chown media audio /data/camera/hisi_sensor1
+    setprop camera.dis.flag 2
+    setprop camera.tnr.flag 1
+    mkdir /data/camera
+    chown system camera /data/camera
+    chmod 770 /data/camera
     chmod 664 /data/camera/hisi_sensor0
     chmod 664 /data/camera/hisi_sensor1
+    mkdir /data/img
+    chown system camera /data/img
+    chmod 770 /data/img
 
     mkdir /data/hisi_logs 0774 root system
     mkdir /data/hisi_logs/hifi_log 0774 root system
@@ -576,7 +598,6 @@ on boot
     chown root radio /sys/kernel/sim/sim0_hotplug_state
     chown root radio /sys/kernel/sim/sim1_hotplug_state
 
-    chown system system /sys/class/leds/torch/brightness
     chmod 664 /sys/class/leds/torch/brightness
     chown system system /sys/class/leds/torch/flash_thermal_protect
     chmod 664 /sys/class/leds/torch/flash_thermal_protect
@@ -585,23 +606,24 @@ on boot
     chown system system /sys/class/leds/torch_front/flash_thermal_protect
     chmod 664 /sys/class/leds/torch_front/flash_thermal_protect
 
-    chown media system /sys/class/camerafs/node/cam_number
+    chown system system /sys/bus/platform/drivers/huawei,camcfgdev/guard_thermal
+    chown system system /sys/class/camerafs/node/cam_number
     chmod 664 /sys/class/camerafs/node/cam_number
-    chown media system /sys/class/camerafs/node/dual_leds
+    chown system system /sys/class/camerafs/node/dual_leds
     chmod 664 /sys/class/camerafs/node/dual_leds
-    chown media system /sys/class/camerafs/node/lightness
+    chown system system /sys/class/camerafs/node/lightness
     chmod 664 /sys/class/camerafs/node/lightness
-    chown media system /sys/class/camerafs/node/front_dual_leds
+    chown system system /sys/class/camerafs/node/front_dual_leds
     chmod 664 /sys/class/camerafs/node/dual_leds
-    chown media system /sys/class/camerafs/node/front_lightness
+    chown system system /sys/class/camerafs/node/front_lightness
     chmod 664 /sys/class/camerafs/node/lightness
-    chown media system /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
+    chown system system /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/ois_pixel
-    chown media system /sys/bus/platform/drivers/huawei,altek6045/test_ois
+    chown system system /sys/bus/platform/drivers/huawei,altek6045/test_ois
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/test_ois
-    chown media system /sys/bus/platform/drivers/huawei,altek6045/check_ois
+    chown system system /sys/bus/platform/drivers/huawei,altek6045/check_ois
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/check_ois
-    chown media system /sys/bus/platform/drivers/huawei,altek6045/test_pipe
+    chown system system /sys/bus/platform/drivers/huawei,altek6045/test_pipe
     chmod 664 /sys/bus/platform/drivers/huawei,altek6045/test_pipe
 
     chmod 660 /proc/hifidsp/hifi
@@ -930,24 +952,9 @@ on property:rild.rild1_ready_to_start=false
 on property:ro.hardware.alter=*
     write /proc/sys/kernel/hardware_alter ${ro.hardware.alter}
 
-
-
 service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1015 -d /mnt/media_rw/usbotg /storage/usbotg
    class late_start
    disabled
-
-
-service rillogcat /system/bin/logcat -b radio -v threadtime -r4096 -z 5 -n 5 -f /data/android_logs/rillogcat-log
-    class late_start
-    user root
-    group system
-    disabled
-
-service kmsglogcat /sbin/kmsgcat -l -r 4096 -z 5 -n 5 -f /data/android_logs/kmsgcat-log
-    class late_start
-    user root
-    group system
-    disabled
 
 service modemlogcat /system/bin/modemlogcat_lte -l
     class late_start
@@ -978,11 +985,6 @@ service oeminfo_nvm /sbin/oeminfo_nvm_server
     critical 
     ioprio rt 4
 
-
-service goldeneye /system/bin/goldeneye
-    class main
-    user root
-
 service teecd /sbin/teecd
     socket tee-multi-user stream 660 root system
     class core
@@ -996,12 +998,6 @@ service charger_huawei /sbin/healthd -c
     group graphics
     disabled
 
-service kmsgcat_cp /sbin/kmsgcat -r 4096 -n 25 -i /dev/cshell_log -f /data/hwzd_logs/cp_log/modemlog/modemkmsg-log
-    class late_start
-    user root
-    group system
-    disabled
-
 service modemlogcat_VIA /system/bin/modemlogcat_via -t /dev/ttySPI1 -c /system/etc/modemConfig/viacbp82d_log.bcfg -p /data/hwzd_logs/cp_log/ -r 30 -n 9
     class late_start
     user root
@@ -1010,7 +1006,7 @@ service modemlogcat_VIA /system/bin/modemlogcat_via -t /dev/ttySPI1 -c /system/e
     oneshot
 
 service macaddr /system/bin/mac_addr_normalization
-    class core
+    class late_start
     user root
     group root bluetooth net_bt_stack wifi
     oneshot
@@ -1052,11 +1048,11 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-on early-boot
-    service HwCamCfgSvr /system/bin/HwCamCfgSvr hi3635 GRACE
+service HwCamCfgSvr /system/bin/HwCamCfgSvr hi3635 GRACE
     class main
     user media
-    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system dsm
+    group audio camera inet net_bt net_bt_admin net_bw_acct wakelock system
+    writepid /dev/cpuset/system-background/tasks /dev/stune/system-background/tasks
 
 service gpsdaemon /system/bin/gpsdaemon
     class late_start
