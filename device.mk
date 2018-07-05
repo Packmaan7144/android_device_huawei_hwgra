@@ -51,7 +51,8 @@ PRODUCT_COPY_FILES += \
 
 # CAMERA
 PRODUCT_PACKAGES += \
-	Camera2
+	Camera2 \
+	Snap
 
 # LibShim
 PRODUCT_PACKAGES += \
