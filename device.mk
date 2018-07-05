@@ -65,7 +65,6 @@ PRODUCT_PACKAGES += \
     libshim_hwui \
     libshim_gpsd \
 
-
 # GPS
 PRODUCT_PACKAGES += \
 	libgccdemangle

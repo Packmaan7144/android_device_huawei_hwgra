@@ -18,14 +18,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Inherit from hwgra device
 $(call inherit-product, device/huawei/hwgra/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE:=hwgra
-PRODUCT_NAME:=lineage_hwgra
+PRODUCT_NAME:=aosp_hwgra
 PRODUCT_BRAND:=HUAWEI
 PRODUCT_MODEL:=HUAWEI GRA-L09
 PRODUCT_MANUFACTURER:=HUAWEI
