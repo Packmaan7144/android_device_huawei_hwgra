@@ -387,4 +387,7 @@
     
     <!-- Configuration to support SIM contact batch operation -->
     <bool name="config_sim_phonebook_batch_operation">true</bool>
+    
+    <!-- Enable LockScreen rotation -->
+    <bool name="config_enableLockScreenRotation">true</bool>
 </resources>
