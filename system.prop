@@ -18,6 +18,10 @@ ro.zygote=zygote64_32
 persist.logd.logpersistd=logcatd
 sys.init_log_level=3
 
+
+#rotate lockscreen
+lockscreen.rot_override=true
+
 #undefined or from rom
 #partially tweaked and merged
 ro.config.mmu_en=1
