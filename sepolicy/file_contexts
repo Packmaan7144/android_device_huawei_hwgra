@@ -24,6 +24,12 @@
 
 /system/etc/native_packages.xml		u:object_r:teecd_data_file:s0
 
+/dev/video								u:object_r:video_device:s0
+/dev/video1								u:object_r:video_device:s0
+/dev/video2								u:object_r:video_device:s0
+/dev/video3								u:object_r:video_device:s0
+
+
 # gps
 /system/bin/gpsdaemon				u:object_r:gpsdaemon_exec:s0
 /system/bin/glgps47531				u:object_r:glgps47531_exec:s0

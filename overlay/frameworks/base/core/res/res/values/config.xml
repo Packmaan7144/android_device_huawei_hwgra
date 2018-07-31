@@ -79,7 +79,7 @@
     <integer name="config_radioScanningTimeout">0</integer>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
@@ -163,7 +163,7 @@
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
-    <integer name="config_safe_media_volume_index">9</integer>
+    <integer name="config_safe_media_volume_index">31</integer>
 
     <bool name="config_enableWifiDisplay">true</bool>
 
@@ -227,7 +227,7 @@
     <bool name="config_hotswapCapable">true</bool>
 
     <!-- Flag specifying whether VoLTE & VT is availasble on device -->
-    <bool name="config_device_volte_available">true</bool>
+    <bool name="config_device_volte_available">false</bool>
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
@@ -266,7 +266,7 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>7</item>
+        <item>1</item>
         <item>8</item>
         <item>10</item>
         <item>12</item>
@@ -386,5 +386,8 @@
     <bool name="config_supportDoubleTapWake">true</bool>
     
     <!-- Configuration to support SIM contact batch operation -->
-    <bool name="config_sim_phonebook_batch_operation">false</bool>
+    <bool name="config_sim_phonebook_batch_operation">true</bool>
+    
+    <!-- Enable LockScreen rotation -->
+    <bool name="config_enableLockScreenRotation">true</bool>
 </resources>

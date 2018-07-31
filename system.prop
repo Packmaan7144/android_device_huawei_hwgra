@@ -5,6 +5,9 @@ ro.sys.fw.dex2oat_thread_count=8
 ro.config.max_starting_bg=8
 ro.sys.fw.use_trim_settings=true
 
+#enable sdcardfs
+ro.sys.sdcardfs=true
+
 #add props
 ro.adb.secure=0
 ro.secure=0
@@ -14,6 +17,10 @@ persist.sys.root_access=3
 ro.zygote=zygote64_32
 persist.logd.logpersistd=logcatd
 sys.init_log_level=3
+
+
+#rotate lockscreen
+lockscreen.rot_override=true
 
 #undefined or from rom
 #partially tweaked and merged
@@ -65,6 +72,8 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.r_buffer_cache_size=8
 debug.hwui.render_dirty_regions=false
 debug.sf.no_hw_vsync=1
+
+
 
 ############################
 #phone prop single sim
