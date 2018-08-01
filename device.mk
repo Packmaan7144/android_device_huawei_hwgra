@@ -202,9 +202,6 @@ PRODUCT_PACKAGES += \
     init.hi3635.usb.rc \
     ueventd.hi3635.rc
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.root_access=3
-
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.selinux=0 \
 	persist.sys.root_access=3
