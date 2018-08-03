@@ -43,22 +43,23 @@ enum {
 };
 
 typedef struct interactive_governor_settings {
+    int scaling_max_freq;
+    int scaling_min_freq;
+    int boost_hmp;
+    int boostpulse_duration;
     int go_hispeed_load;
     int hispeed_freq;
     int io_is_busy;
-    int boostpulse_duration;
+    int min_sample_time;
     char *target_loads;
-    int scaling_min_freq;
-    int scaling_max_freq;
     int timer_rate;
     int timer_slack;
-    int min_sample_time;
 } power_profile_cpu;
 
 typedef struct other_settings {
-    int hmp_up;
     int hmp_down;
     int hmp_prio;
+    int hmp_up;
     unsigned long ddr_max_freq;
     unsigned long ddr_min_freq;
     int ddr_polling_interval;
@@ -71,87 +72,93 @@ typedef struct other_settings {
 
 static power_profile_cpu profiles0[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
+        .scaling_max_freq = 1017600,
+        .scaling_min_freq = 403200,
+        .boost_hmp = 0,
+        .boostpulse_duration = 40000,
         .go_hispeed_load = 99,
         .hispeed_freq = 806400,
         .io_is_busy = 0,
-        .boostpulse_duration = 40000,
+        .min_sample_time = 100000,
         .target_loads = "80",
-        .scaling_min_freq = 403200,
-        .scaling_max_freq = 1017600,
         .timer_rate = 30000,
         .timer_slack = 40000,
-        .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
+        .scaling_max_freq = 1516800,
+        .scaling_min_freq = 403200,
+        .boost_hmp = 1,
+        .boostpulse_duration = 40000,
         .go_hispeed_load = 80,
         .hispeed_freq = 1017600,
         .io_is_busy = 1,
-        .boostpulse_duration = 40000,
+        .min_sample_time = 300000,
         .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70",
-        .scaling_min_freq = 403200,
-        .scaling_max_freq = 1516800,
         .timer_rate = 30000,
         .timer_slack = 40000,
-        .min_sample_time = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
+        .scaling_max_freq = 1516800,
+        .scaling_min_freq = 403200,
+        .boost_hmp = 1,
+        .boostpulse_duration = 80000,
         .go_hispeed_load = 60,
         .hispeed_freq = 1209600,
         .io_is_busy = 1,
-        .boostpulse_duration = 80000,
+        .min_sample_time = 300000,
         .target_loads = "20 403200:30 806400:50 1017600:60 1209600:70",
-        .scaling_min_freq = 403200,
-        .scaling_max_freq = 1516800,
         .timer_rate = 30000,
         .timer_slack = 40000,
-        .min_sample_time = 300000,
     },
 };
 
 static power_profile_cpu profiles1[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
+        .scaling_max_freq = 1209600,
+        .scaling_min_freq = 1017600,
+        .boost_hmp = 0,
+        .boostpulse_duration = 40000,
     	.go_hispeed_load = 99,
     	.hispeed_freq = 1209600,
         .io_is_busy = 0,
-        .boostpulse_duration = 40000,
+        .min_sample_time = 100000,
         .target_loads = "80",
-        .scaling_min_freq = 1017600,
-        .scaling_max_freq = 1209600,
         .timer_rate = 40000,
         .timer_slack = 50000,
-        .min_sample_time = 100000,
     },
     [PROFILE_BALANCED] = {
+        .scaling_max_freq = 2016000,
+        .scaling_min_freq = 1017600,
+        .boost_hmp = 1,
+        .boostpulse_duration = 40000,
         .go_hispeed_load = 80,
     	.hispeed_freq = 1401600,
         .io_is_busy = 1,
-        .boostpulse_duration = 40000,
+        .min_sample_time = 300000,
         .target_loads = "75",
-        .scaling_min_freq = 1017600,
-        .scaling_max_freq = 2016000,
         .timer_rate = 40000,
         .timer_slack = 50000,
-        .min_sample_time = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
+        .scaling_max_freq = 2016000,
+        .scaling_min_freq = 1017600,
+        .boost_hmp = 1,
+        .boostpulse_duration = 80000,
         .go_hispeed_load = 60,
     	.hispeed_freq = 1612800,
         .io_is_busy = 1,
-        .boostpulse_duration = 80000,
+        .min_sample_time = 300000,
         .target_loads = "70",
-        .scaling_min_freq = 1017600,
-        .scaling_max_freq = 2016000,
         .timer_rate = 40000,
         .timer_slack = 50000,
-        .min_sample_time = 300000,
     },
 };
 
 static power_profile_other profiles2[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
-        .hmp_up = 1008,
         .hmp_down = 768,
         .hmp_prio = 140,
+        .hmp_up = 1008,
         .ddr_max_freq = 400000000,
         .ddr_min_freq = 120000000,
         .ddr_polling_interval = 20,
@@ -162,9 +169,9 @@ static power_profile_other profiles2[PROFILE_MAX] = {
         .animation_boost_freq = 360000000,
     },
     [PROFILE_BALANCED] = {
-        .hmp_up = 978,
         .hmp_down = 672,
         .hmp_prio = 140,
+        .hmp_up = 978,
         .ddr_max_freq = 800000000,
         .ddr_min_freq = 120000000,
         .ddr_polling_interval = 40,
@@ -175,9 +182,9 @@ static power_profile_other profiles2[PROFILE_MAX] = {
         .animation_boost_freq = 600000000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
-        .hmp_up = 500,
         .hmp_down = 200,
         .hmp_prio = 140,
+        .hmp_up = 500,
         .ddr_max_freq = 800000000,
         .ddr_min_freq = 120000000,
         .ddr_polling_interval = 50,
