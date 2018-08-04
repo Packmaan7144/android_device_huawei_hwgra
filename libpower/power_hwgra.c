@@ -117,7 +117,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles0[current_power_profile].scaling_max_freq);
         sysfs_write_int(CPUFREQ_PATH0 "scaling_min_freq",
                         profiles0[current_power_profile].scaling_min_freq);
-        sysfs_write_str(INTERACTIVE_PATH0 "boost_hmp",
+        sysfs_write_int(INTERACTIVE_PATH0 "boost_hmp",
                         profiles0[current_power_profile].boost_hmp);
         sysfs_write_int(INTERACTIVE_PATH0 "boostpulse_duration",
                         profiles0[current_power_profile].boostpulse_duration);
@@ -140,7 +140,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
                         profiles1[current_power_profile].scaling_max_freq);
         sysfs_write_int(CPUFREQ_PATH1 "scaling_min_freq",
                         profiles1[current_power_profile].scaling_min_freq);
-        sysfs_write_str(INTERACTIVE_PATH1 "boost_hmp",
+        sysfs_write_int(INTERACTIVE_PATH1 "boost_hmp",
                         profiles1[current_power_profile].boost_hmp);
         sysfs_write_int(INTERACTIVE_PATH1 "boostpulse_duration",
                         profiles1[current_power_profile].boostpulse_duration);
@@ -205,7 +205,7 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
       sysfs_write_int(INTERACTIVE_PATH0 "timer_rate",
                       profiles0[PROFILE_BALANCED].timer_rate);
       sysfs_write_int(INTERACTIVE_PATH0 "timer_slack",
-                      profiles0[PROFILE_BALANCED].timer_slack)
+                      profiles0[PROFILE_BALANCED].timer_slack);
 
       sysfs_write_int(CPUFREQ_PATH1 "scaling_max_freq",
                       profiles1[PROFILE_BALANCED].scaling_max_freq);
