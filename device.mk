@@ -187,7 +187,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/prebuilts/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf    
+    $(LOCAL_PATH)/prebuilts/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/prebuilts/hostapd.conf:system/etc/wifi/hostapd.conf
 
 # GPS
 PRODUCT_PACKAGES += \

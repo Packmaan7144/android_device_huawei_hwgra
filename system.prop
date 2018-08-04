@@ -187,9 +187,8 @@ ro.config.enable_rcc=true
 persist.sys.usb.config.extra=none
 
 # CAMERA
-
-camera.hal1.packagelist=com.whatsapp,com.google.android.GoogleCamera,com.android.camera2
-media.stagefright.legacyencoder=true
+media.stagefright.legacyencoder=true 
+media.stagefright.less-secure=true 
 
 
 ro.config.camera_target_track=true
